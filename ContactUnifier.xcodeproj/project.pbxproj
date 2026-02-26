@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B090DA02F4EB218005606AA /* CreateTagVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B090D9F2F4EB218005606AA /* CreateTagVC.swift */; };
+		8B090DA32F4EB562005606AA /* TagColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B090DA12F4EB562005606AA /* TagColorCell.swift */; };
+		8B090DA42F4EB562005606AA /* TagColorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B090DA22F4EB562005606AA /* TagColorCell.xib */; };
+		8B090DA62F4ECB6D005606AA /* ImportSyncVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B090DA52F4ECB6D005606AA /* ImportSyncVC.swift */; };
+		8B090DA92F4EE61C005606AA /* ConnectedSourceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B090DA72F4EE61C005606AA /* ConnectedSourceCell.swift */; };
+		8B090DAA2F4EE61C005606AA /* ConnectedSourceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B090DA82F4EE61C005606AA /* ConnectedSourceCell.xib */; };
+		8B090DAC2F4F1F8D005606AA /* ActivityTimelineVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B090DAB2F4F1F8D005606AA /* ActivityTimelineVC.swift */; };
+		8B090DAF2F4F22CB005606AA /* TimelineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B090DAD2F4F22CB005606AA /* TimelineCell.swift */; };
+		8B090DB02F4F22CB005606AA /* TimelineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B090DAE2F4F22CB005606AA /* TimelineCell.xib */; };
 		8B6674742F4C5EC700FFEF39 /* OpenSansLbl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6674732F4C5EC700FFEF39 /* OpenSansLbl.swift */; };
 		8B6674762F4C5EF200FFEF39 /* LogHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6674752F4C5EF200FFEF39 /* LogHandler.swift */; };
 		8B6674782F4C5F0100FFEF39 /* AppVault.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B6674772F4C5F0100FFEF39 /* AppVault.plist */; };
@@ -54,6 +63,17 @@
 		8BAFA4D02F4DC8C400C85738 /* GroupCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BAFA4CF2F4DC8C400C85738 /* GroupCell.xib */; };
 		8BAFA4D12F4DC8C400C85738 /* GroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BAFA4CE2F4DC8C400C85738 /* GroupCell.swift */; };
 		8BAFA4D32F4DD55100C85738 /* ConnectYourContactsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BAFA4D22F4DD55100C85738 /* ConnectYourContactsVC.swift */; };
+		8BD1C1272F50020300B7C2CF /* LostTouchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD1C1262F50020300B7C2CF /* LostTouchVC.swift */; };
+		8BD1C12A2F50044000B7C2CF /* LostTouchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BD1C1292F50044000B7C2CF /* LostTouchCell.xib */; };
+		8BD1C12B2F50044000B7C2CF /* LostTouchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD1C1282F50044000B7C2CF /* LostTouchCell.swift */; };
+		8BD1C12E2F503A8B00B7C2CF /* DayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BD1C12D2F503A8B00B7C2CF /* DayCell.xib */; };
+		8BD1C12F2F503A8B00B7C2CF /* DayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD1C12C2F503A8B00B7C2CF /* DayCell.swift */; };
+		8BD1C1312F505C2B00B7C2CF /* InviteListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD1C1302F505C2B00B7C2CF /* InviteListVC.swift */; };
+		8BD1C1332F505F7F00B7C2CF /* CreateInviteListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD1C1322F505F7F00B7C2CF /* CreateInviteListVC.swift */; };
+		8BD1C1362F50677A00B7C2CF /* InviteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BD1C1352F50677A00B7C2CF /* InviteCell.xib */; };
+		8BD1C1372F50677A00B7C2CF /* InviteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD1C1342F50677A00B7C2CF /* InviteCell.swift */; };
+		8BD1C1392F5068ED00B7C2CF /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD1C1382F5068ED00B7C2CF /* Protocols.swift */; };
+		8BD1C13B2F506C1100B7C2CF /* CleanUpContactsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD1C13A2F506C1100B7C2CF /* CleanUpContactsVC.swift */; };
 		8BE0C2062F4C534800817A90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE0C1FC2F4C534800817A90 /* AppDelegate.swift */; };
 		8BE0C2072F4C534800817A90 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE0C2032F4C534800817A90 /* SceneDelegate.swift */; };
 		8BE0C2082F4C534800817A90 /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE0C2042F4C534800817A90 /* DashboardVC.swift */; };
@@ -109,6 +129,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8B090D9F2F4EB218005606AA /* CreateTagVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTagVC.swift; sourceTree = "<group>"; };
+		8B090DA12F4EB562005606AA /* TagColorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagColorCell.swift; sourceTree = "<group>"; };
+		8B090DA22F4EB562005606AA /* TagColorCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagColorCell.xib; sourceTree = "<group>"; };
+		8B090DA52F4ECB6D005606AA /* ImportSyncVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportSyncVC.swift; sourceTree = "<group>"; };
+		8B090DA72F4EE61C005606AA /* ConnectedSourceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectedSourceCell.swift; sourceTree = "<group>"; };
+		8B090DA82F4EE61C005606AA /* ConnectedSourceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConnectedSourceCell.xib; sourceTree = "<group>"; };
+		8B090DAB2F4F1F8D005606AA /* ActivityTimelineVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTimelineVC.swift; sourceTree = "<group>"; };
+		8B090DAD2F4F22CB005606AA /* TimelineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineCell.swift; sourceTree = "<group>"; };
+		8B090DAE2F4F22CB005606AA /* TimelineCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimelineCell.xib; sourceTree = "<group>"; };
 		8B6674732F4C5EC700FFEF39 /* OpenSansLbl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSansLbl.swift; sourceTree = "<group>"; };
 		8B6674752F4C5EF200FFEF39 /* LogHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogHandler.swift; sourceTree = "<group>"; };
 		8B6674772F4C5F0100FFEF39 /* AppVault.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = AppVault.plist; sourceTree = "<group>"; };
@@ -157,6 +186,17 @@
 		8BAFA4CE2F4DC8C400C85738 /* GroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCell.swift; sourceTree = "<group>"; };
 		8BAFA4CF2F4DC8C400C85738 /* GroupCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupCell.xib; sourceTree = "<group>"; };
 		8BAFA4D22F4DD55100C85738 /* ConnectYourContactsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectYourContactsVC.swift; sourceTree = "<group>"; };
+		8BD1C1262F50020300B7C2CF /* LostTouchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LostTouchVC.swift; sourceTree = "<group>"; };
+		8BD1C1282F50044000B7C2CF /* LostTouchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LostTouchCell.swift; sourceTree = "<group>"; };
+		8BD1C1292F50044000B7C2CF /* LostTouchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LostTouchCell.xib; sourceTree = "<group>"; };
+		8BD1C12C2F503A8B00B7C2CF /* DayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCell.swift; sourceTree = "<group>"; };
+		8BD1C12D2F503A8B00B7C2CF /* DayCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DayCell.xib; sourceTree = "<group>"; };
+		8BD1C1302F505C2B00B7C2CF /* InviteListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteListVC.swift; sourceTree = "<group>"; };
+		8BD1C1322F505F7F00B7C2CF /* CreateInviteListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateInviteListVC.swift; sourceTree = "<group>"; };
+		8BD1C1342F50677A00B7C2CF /* InviteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteCell.swift; sourceTree = "<group>"; };
+		8BD1C1352F50677A00B7C2CF /* InviteCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InviteCell.xib; sourceTree = "<group>"; };
+		8BD1C1382F5068ED00B7C2CF /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		8BD1C13A2F506C1100B7C2CF /* CleanUpContactsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanUpContactsVC.swift; sourceTree = "<group>"; };
 		8BE0C1E42F4C533900817A90 /* ContactUnifier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContactUnifier.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BE0C1FC2F4C534800817A90 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8BE0C1FD2F4C534800817A90 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -281,40 +321,60 @@
 			children = (
 				8B6674772F4C5F0100FFEF39 /* AppVault.plist */,
 				8BE0C1FE2F4C534800817A90 /* Info.plist */,
+				8B090DAB2F4F1F8D005606AA /* ActivityTimelineVC.swift */,
 				8BAFA4C32F4DBD0400C85738 /* AddNewContactVC.swift */,
 				8B6674B92F4CA4CF00FFEF39 /* AllContactsVC.swift */,
 				8BE0C1FC2F4C534800817A90 /* AppDelegate.swift */,
+				8BD1C13A2F506C1100B7C2CF /* CleanUpContactsVC.swift */,
+				8B090DA72F4EE61C005606AA /* ConnectedSourceCell.swift */,
 				8BAFA4D22F4DD55100C85738 /* ConnectYourContactsVC.swift */,
 				8B6674BB2F4CA89E00FFEF39 /* ContactCell.swift */,
 				8B6674B52F4C963100FFEF39 /* ContactTableViewCell.swift */,
+				8BD1C1322F505F7F00B7C2CF /* CreateInviteListVC.swift */,
+				8B090D9F2F4EB218005606AA /* CreateTagVC.swift */,
 				8B6674AB2F4C6F7600FFEF39 /* CustomMovieActivityItemSource.swift */,
 				8BAFA4BB2F4D6F2200C85738 /* CustomOptionCell.swift */,
 				8B6674AD2F4C7D8300FFEF39 /* DashboardCell.swift */,
 				8BE0C2042F4C534800817A90 /* DashboardVC.swift */,
+				8BD1C12C2F503A8B00B7C2CF /* DayCell.swift */,
 				8B6674A42F4C6EE100FFEF39 /* Enums.swift */,
 				8BAFA4CE2F4DC8C400C85738 /* GroupCell.swift */,
 				8BAFA4CC2F4DC83100C85738 /* GroupsVC.swift */,
 				8BE0C2162F4C563300817A90 /* HeaderCell.swift */,
+				8B090DA52F4ECB6D005606AA /* ImportSyncVC.swift */,
+				8BD1C1342F50677A00B7C2CF /* InviteCell.swift */,
+				8BD1C1302F505C2B00B7C2CF /* InviteListVC.swift */,
 				8B6674A22F4C64AA00FFEF39 /* KeyboardEventListener.swift */,
 				8B6674752F4C5EF200FFEF39 /* LogHandler.swift */,
+				8BD1C1282F50044000B7C2CF /* LostTouchCell.swift */,
+				8BD1C1262F50020300B7C2CF /* LostTouchVC.swift */,
 				8B6674732F4C5EC700FFEF39 /* OpenSansLbl.swift */,
 				8BE0C2122F4C54FA00817A90 /* OptionCell.swift */,
+				8BD1C1382F5068ED00B7C2CF /* Protocols.swift */,
 				8BE0C2032F4C534800817A90 /* SceneDelegate.swift */,
 				8B6674A62F4C6EFD00FFEF39 /* SharedMethods.swift */,
 				8BE0C2102F4C54D400817A90 /* SideMenuOptionDetails.swift */,
 				8BAFA4BF2F4D9AC600C85738 /* TagCell.swift */,
+				8B090DA12F4EB562005606AA /* TagColorCell.swift */,
+				8B090DAD2F4F22CB005606AA /* TimelineCell.swift */,
 				8B6674A02F4C649600FFEF39 /* Toast.swift */,
 				8B6674B12F4C86DD00FFEF39 /* UserCell.swift */,
 				8B6674792F4C5F0600FFEF39 /* VaultInfo.swift */,
 				8BE0C1FD2F4C534800817A90 /* Assets.xcassets */,
+				8B090DA82F4EE61C005606AA /* ConnectedSourceCell.xib */,
 				8B6674BC2F4CA89E00FFEF39 /* ContactCell.xib */,
 				8B6674B62F4C963100FFEF39 /* ContactTableViewCell.xib */,
 				8BAFA4BC2F4D6F2200C85738 /* CustomOptionCell.xib */,
 				8B6674AE2F4C7D8300FFEF39 /* DashboardCell.xib */,
+				8BD1C12D2F503A8B00B7C2CF /* DayCell.xib */,
 				8BAFA4CF2F4DC8C400C85738 /* GroupCell.xib */,
 				8BE0C2172F4C563300817A90 /* HeaderCell.xib */,
+				8BD1C1352F50677A00B7C2CF /* InviteCell.xib */,
+				8BD1C1292F50044000B7C2CF /* LostTouchCell.xib */,
 				8BE0C2132F4C54FA00817A90 /* OptionCell.xib */,
 				8BAFA4C02F4D9AC600C85738 /* TagCell.xib */,
+				8B090DA22F4EB562005606AA /* TagColorCell.xib */,
+				8B090DAE2F4F22CB005606AA /* TimelineCell.xib */,
 				8B6674B22F4C86DD00FFEF39 /* UserCell.xib */,
 				8B66748E2F4C645300FFEF39 /* Extensions */,
 				8BE0C2002F4C534800817A90 /* LaunchScreen.storyboard */,
@@ -461,6 +521,7 @@
 				8BE0C3BF2F4C5CCD00817A90 /* OpenSans_Condensed-LightItalic.ttf in Resources */,
 				8BE0C3C02F4C5CCD00817A90 /* OpenSans_Condensed-Medium.ttf in Resources */,
 				8BE0C3C12F4C5CCD00817A90 /* OpenSans_Condensed-MediumItalic.ttf in Resources */,
+				8B090DA42F4EB562005606AA /* TagColorCell.xib in Resources */,
 				8BE0C3C22F4C5CCD00817A90 /* OpenSans_Condensed-Regular.ttf in Resources */,
 				8BE0C3C32F4C5CCD00817A90 /* OpenSans_Condensed-SemiBold.ttf in Resources */,
 				8BAFA4D02F4DC8C400C85738 /* GroupCell.xib in Resources */,
@@ -487,18 +548,23 @@
 				8BE0C3D62F4C5CCD00817A90 /* OpenSans-Light.ttf in Resources */,
 				8BE0C3D72F4C5CCD00817A90 /* OpenSans-LightItalic.ttf in Resources */,
 				8BE0C3D82F4C5CCD00817A90 /* OpenSans-Medium.ttf in Resources */,
+				8B090DAA2F4EE61C005606AA /* ConnectedSourceCell.xib in Resources */,
 				8BAFA4BE2F4D6F2200C85738 /* CustomOptionCell.xib in Resources */,
 				8B6674AF2F4C7D8300FFEF39 /* DashboardCell.xib in Resources */,
 				8BE0C3D92F4C5CCD00817A90 /* OpenSans-MediumItalic.ttf in Resources */,
 				8BE0C3DA2F4C5CCD00817A90 /* OpenSans-Regular.ttf in Resources */,
+				8BD1C1362F50677A00B7C2CF /* InviteCell.xib in Resources */,
+				8BD1C12E2F503A8B00B7C2CF /* DayCell.xib in Resources */,
 				8BE0C3DB2F4C5CCD00817A90 /* OpenSans-SemiBold.ttf in Resources */,
 				8BE0C3DC2F4C5CCD00817A90 /* OpenSans-SemiBoldItalic.ttf in Resources */,
+				8B090DB02F4F22CB005606AA /* TimelineCell.xib in Resources */,
 				8BE0C3DD2F4C5CCD00817A90 /* OFL.txt in Resources */,
 				8BE0C3DE2F4C5CCD00817A90 /* OpenSans-Italic-VariableFont_wdth,wght.ttf in Resources */,
 				8B6674B72F4C963100FFEF39 /* ContactTableViewCell.xib in Resources */,
 				8B6674B32F4C86DD00FFEF39 /* UserCell.xib in Resources */,
 				8BE0C3DF2F4C5CCD00817A90 /* OpenSans-VariableFont_wdth,wght.ttf in Resources */,
 				8BE0C3E02F4C5CCD00817A90 /* README.txt in Resources */,
+				8BD1C12A2F50044000B7C2CF /* LostTouchCell.xib in Resources */,
 				8BE0C20C2F4C534800817A90 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -514,16 +580,19 @@
 				8B6674BD2F4CA89E00FFEF39 /* ContactCell.swift in Sources */,
 				8BE0C2142F4C54FA00817A90 /* OptionCell.swift in Sources */,
 				8BE0C2062F4C534800817A90 /* AppDelegate.swift in Sources */,
+				8B090DA32F4EB562005606AA /* TagColorCell.swift in Sources */,
 				8B66748F2F4C645300FFEF39 /* NotificationCenterName.swift in Sources */,
 				8B6674902F4C645300FFEF39 /* UILabelExtensions.swift in Sources */,
 				8BAFA4D12F4DC8C400C85738 /* GroupCell.swift in Sources */,
 				8B6674912F4C645300FFEF39 /* UIButtonExtension.swift in Sources */,
+				8BD1C1392F5068ED00B7C2CF /* Protocols.swift in Sources */,
 				8BAFA4BD2F4D6F2200C85738 /* CustomOptionCell.swift in Sources */,
 				8B6674922F4C645300FFEF39 /* TableViewExt.swift in Sources */,
 				8B6674932F4C645300FFEF39 /* UIWindowExtension.swift in Sources */,
 				8B6674942F4C645300FFEF39 /* UIImageViewExtension.swift in Sources */,
 				8B6674952F4C645300FFEF39 /* UITextViewExtension.swift in Sources */,
 				8BAFA4CD2F4DC83100C85738 /* GroupsVC.swift in Sources */,
+				8B090DA62F4ECB6D005606AA /* ImportSyncVC.swift in Sources */,
 				8B6674962F4C645300FFEF39 /* DispatchQueue.swift in Sources */,
 				8B6674972F4C645300FFEF39 /* UIColorExt.swift in Sources */,
 				8B6674982F4C645300FFEF39 /* DoubleExt.swift in Sources */,
@@ -531,24 +600,35 @@
 				8B66749A2F4C645300FFEF39 /* URLExt.swift in Sources */,
 				8B66749B2F4C645300FFEF39 /* UIImageExt.swift in Sources */,
 				8B6674A32F4C64AA00FFEF39 /* KeyboardEventListener.swift in Sources */,
+				8B090DAC2F4F1F8D005606AA /* ActivityTimelineVC.swift in Sources */,
 				8B6674B82F4C963100FFEF39 /* ContactTableViewCell.swift in Sources */,
+				8B090DA92F4EE61C005606AA /* ConnectedSourceCell.swift in Sources */,
 				8B66749C2F4C645300FFEF39 /* ViewExt.swift in Sources */,
+				8BD1C1272F50020300B7C2CF /* LostTouchVC.swift in Sources */,
 				8BAFA4C42F4DBD0400C85738 /* AddNewContactVC.swift in Sources */,
 				8B6674A52F4C6EE100FFEF39 /* Enums.swift in Sources */,
+				8BD1C1312F505C2B00B7C2CF /* InviteListVC.swift in Sources */,
 				8B6674A12F4C649600FFEF39 /* Toast.swift in Sources */,
 				8BAFA4C12F4D9AC600C85738 /* TagCell.swift in Sources */,
 				8B66749D2F4C645300FFEF39 /* DataExt.swift in Sources */,
 				8B6674B42F4C86DD00FFEF39 /* UserCell.swift in Sources */,
 				8B66749E2F4C645300FFEF39 /* TextFieldExt.swift in Sources */,
+				8BD1C12B2F50044000B7C2CF /* LostTouchCell.swift in Sources */,
+				8B090DA02F4EB218005606AA /* CreateTagVC.swift in Sources */,
 				8B66749F2F4C645300FFEF39 /* StringExtension.swift in Sources */,
 				8B6674B02F4C7D8300FFEF39 /* DashboardCell.swift in Sources */,
+				8BD1C12F2F503A8B00B7C2CF /* DayCell.swift in Sources */,
 				8B66747A2F4C5F0600FFEF39 /* VaultInfo.swift in Sources */,
+				8BD1C1372F50677A00B7C2CF /* InviteCell.swift in Sources */,
 				8B6674AC2F4C6F7600FFEF39 /* CustomMovieActivityItemSource.swift in Sources */,
 				8B6674BA2F4CA4CF00FFEF39 /* AllContactsVC.swift in Sources */,
+				8BD1C13B2F506C1100B7C2CF /* CleanUpContactsVC.swift in Sources */,
 				8B6674A72F4C6EFD00FFEF39 /* SharedMethods.swift in Sources */,
 				8B6674762F4C5EF200FFEF39 /* LogHandler.swift in Sources */,
+				8B090DAF2F4F22CB005606AA /* TimelineCell.swift in Sources */,
 				8B6674742F4C5EC700FFEF39 /* OpenSansLbl.swift in Sources */,
 				8BE0C2072F4C534800817A90 /* SceneDelegate.swift in Sources */,
+				8BD1C1332F505F7F00B7C2CF /* CreateInviteListVC.swift in Sources */,
 				8BE0C2082F4C534800817A90 /* DashboardVC.swift in Sources */,
 				8BE0C2192F4C563300817A90 /* HeaderCell.swift in Sources */,
 				8BAFA4CA2F4DC7C900C85738 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,

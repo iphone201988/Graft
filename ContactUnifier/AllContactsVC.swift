@@ -31,19 +31,19 @@ class AllContactsVC: UIViewController {
                    ["tag": "Google", "color": ""]]
     
     var tags = [["tag": "All Tags", "color": ""],
-                ["tag": "business", "color": "business"],
-                ["tag": "close friends", "color": "closefriends"],
-                ["tag": "colleague", "color": "colleague"],
-                ["tag": "consulting", "color": "consulting"],
-                ["tag": "designer", "color": "designer"],
-                ["tag": "finance", "color": "finance"],
-                ["tag": "friend", "color": "friend"],
-                ["tag": "investor", "color": "investor"],
-                ["tag": "networking", "color": "networking"],
-                ["tag": "tech", "color": "tech"],
-                ["tag": "vip", "color": "vip"],
-                ["tag": "wellness", "color": "wellness"]]
-    
+                ["tag": "business", "color": "#EF4444"],
+                ["tag": "close friends", "color": "#D946EF"],
+                ["tag": "colleague", "color": "#8B5CF6"],
+                ["tag": "consulting", "color": "#F97316"],
+                ["tag": "designer", "color": "#EC4899"],
+                ["tag": "finance", "color": "#10B981"],
+                ["tag": "friend", "color": "#3B82F6"],
+                ["tag": "investor", "color": "#A855F7"],
+                ["tag": "networking", "color": "#14B8A6"],
+                ["tag": "tech", "color": "#F59E0B"],
+                ["tag": "vip", "color": "#0EA5E9"],
+                ["tag": "wellness", "color": "#84CC16"]]
+
     var selectedSource: [String: Any] = ["tag": "All Sources", "color": ""]
     var selectedTag: [String: Any] = ["tag": "All Tags", "color": ""]
     var sourcePopupView: TagPopupView?
@@ -275,7 +275,7 @@ class TagPopupView: UIView, UITableViewDelegate, UITableViewDataSource {
         let tag = tags[indexPath.row]
         cell.tagLbl.text = tag["tag"] as? String ?? ""
         let colorName = tag["color"] as? String ?? ""
-        cell.tagIcon.backgroundColor = UIColor(named: colorName)
+        cell.tagIcon.tintColor = UIColor(named: colorName)
         if colorName.isEmpty {
             cell.tagWidth.constant = 0.0
             cell.tagTrailing.constant = 0.0

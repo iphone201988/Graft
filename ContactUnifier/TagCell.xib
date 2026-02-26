@@ -27,7 +27,7 @@
                                     <constraint firstAttribute="width" secondItem="Pao-dp-WCc" secondAttribute="height" multiplier="1:1" id="3uI-pw-wbi"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="K2g-AF-q2P">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Frame 28" translatesAutoresizingMaskIntoConstraints="NO" id="K2g-AF-q2P">
                                 <rect key="frame" x="45" y="14.666666666666664" width="16" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="K2g-AF-q2P" secondAttribute="height" multiplier="1:1" id="8vz-rU-wyU"/>
@@ -87,6 +87,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="Frame 28" width="24" height="24"/>
         <image name="Frame 5" width="24" height="24"/>
         <namedColor name="#1D1F20">
             <color red="0.11372549019607843" green="0.12156862745098039" blue="0.12549019607843137" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

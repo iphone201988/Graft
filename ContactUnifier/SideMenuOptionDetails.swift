@@ -39,7 +39,6 @@ class SideMenuOptionsVC: UIViewController {
 }
 
 // MARK: Delegates and DataSources
-
 extension SideMenuOptionsVC: UITableViewDelegate,UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -102,23 +101,45 @@ extension SideMenuOptionsVC: UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         let section = menus[indexPath.section]
         let options = section["options"] as? NSArray ?? []
         let details = options[indexPath.row] as? NSDictionary ?? [:]
         selectedOptions = details["title"] as? String ?? ""
-        
-        if indexPath.row == 0 {
-            dismiss(animated: false) {
-                SharedMethods.shared.pushToWithoutData(destVC: DashboardVC.self, storyboard: .main, isAnimated: false)
+        if indexPath.section == 0 {
+            if indexPath.row == 0 {
+                dismiss(animated: false) {
+                    SharedMethods.shared.pushToWithoutData(destVC: DashboardVC.self, storyboard: .main, isAnimated: false)
+                }
+            } else if indexPath.row == 1 {
+                dismiss(animated: false) {
+                    SharedMethods.shared.pushToWithoutData(destVC: AllContactsVC.self, storyboard: .main, isAnimated: false)
+                }
+            } else if indexPath.row == 2 {
+                dismiss(animated: false) {
+                    SharedMethods.shared.pushToWithoutData(destVC: GroupsVC.self, storyboard: .main, isAnimated: false)
+                }
+            } else if indexPath.row == 3 {
+                dismiss(animated: false) {
+                    SharedMethods.shared.pushToWithoutData(destVC: ImportSyncVC.self, storyboard: .main, isAnimated: false)
+                }
             }
-        } else if indexPath.row == 1 {
-            dismiss(animated: false) {
-                SharedMethods.shared.pushToWithoutData(destVC: AllContactsVC.self, storyboard: .main, isAnimated: false)
-            }
-        } else if indexPath.row == 2 {
-            dismiss(animated: false) {
-                SharedMethods.shared.pushToWithoutData(destVC: GroupsVC.self, storyboard: .main, isAnimated: false)
+        } else {
+            if indexPath.row == 0 {
+                dismiss(animated: false) {
+                    SharedMethods.shared.pushToWithoutData(destVC: CleanUpContactsVC.self, storyboard: .main, isAnimated: false)
+                }
+            } else if indexPath.row == 1 {
+                dismiss(animated: false) {
+                    SharedMethods.shared.pushToWithoutData(destVC: ActivityTimelineVC.self, storyboard: .main, isAnimated: false)
+                }
+            } else if indexPath.row == 2 {
+                dismiss(animated: false) {
+                    SharedMethods.shared.pushToWithoutData(destVC: LostTouchVC.self, storyboard: .main, isAnimated: false)
+                }
+            }  else if indexPath.row == 3 {
+                dismiss(animated: false) {
+                    SharedMethods.shared.pushToWithoutData(destVC: InviteListVC.self, storyboard: .main, isAnimated: false)
+                }
             }
         }
     }
