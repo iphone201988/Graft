@@ -9173,7 +9173,7 @@ if __name__ == "__main__":
                                 <rect key="frame" x="0.0" y="188" width="393" height="596"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="68S-yk-cdv">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="1658.6666666666667"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="2302.6666666666665"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="8wQ-X7-aTZ">
                                                 <rect key="frame" x="20" y="0.0" width="215.66666666666666" height="57.333333333333336"/>
@@ -9271,7 +9271,7 @@ if __name__ == "__main__":
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4fc-y0-d8F">
-                                                <rect key="frame" x="20" y="135.33333333333331" width="353" height="35"/>
+                                                <rect key="frame" x="20" y="135.33333333333331" width="353" height="679"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Frame 2" translatesAutoresizingMaskIntoConstraints="NO" id="1Eh-oE-cCL">
                                                         <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
@@ -9335,6 +9335,7 @@ if __name__ == "__main__":
                                                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
                                                                 <connections>
+                                                                    <action selector="hideShowDuplicateContacts:" destination="IZW-PY-5kh" eventType="touchUpInside" id="adT-YI-Fam"/>
                                                                     <action selector="hideShowIMessageView:" destination="R3F-UY-xdb" eventType="touchUpInside" id="BKh-ny-yGV"/>
                                                                 </connections>
                                                             </button>
@@ -9359,10 +9360,10 @@ if __name__ == "__main__":
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="6GD-UG-23z">
-                                                        <rect key="frame" x="0.0" y="33" width="353" height="0.0"/>
+                                                        <rect key="frame" x="0.0" y="33" width="353" height="644"/>
                                                         <subviews>
                                                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contacts with identical first and last names that can be automatically merged." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Dp-dk-suX" customClass="OpenSansLbl" customModule="ContactUnifier" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="501.33333333333331" height="0.0"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="353" height="0.0"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <color key="textColor" name="#4D5256"/>
                                                                 <nil key="highlightedColor"/>
@@ -9372,21 +9373,33 @@ if __name__ == "__main__":
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                             </label>
-                                                            <view hidden="YES" clipsSubviews="YES" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="qcC-kJ-LDC">
-                                                                <rect key="frame" x="0.0" y="0.0" width="501.33333333333331" height="132"/>
+                                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="q6A-dD-vZ0">
+                                                                <rect key="frame" x="0.0" y="0.0" width="353" height="500"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="500" id="cf0-tI-lfi"/>
+                                                                </constraints>
+                                                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <connections>
+                                                                    <outlet property="dataSource" destination="IZW-PY-5kh" id="2ev-Zb-jla"/>
+                                                                    <outlet property="delegate" destination="IZW-PY-5kh" id="PnN-nj-us2"/>
+                                                                </connections>
+                                                            </tableView>
+                                                            <view clipsSubviews="YES" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="qcC-kJ-LDC">
+                                                                <rect key="frame" x="0.0" y="512" width="353" height="132"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JV6-uO-y5p">
-                                                                        <rect key="frame" x="0.0" y="32.333333333333371" width="501.33333333333331" height="67"/>
+                                                                        <rect key="frame" x="0.0" y="32.333333333333258" width="353" height="67"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Frame 9" translatesAutoresizingMaskIntoConstraints="NO" id="IU2-RU-1zV">
-                                                                                <rect key="frame" x="230.66666666666666" y="0.0" width="39.999999999999972" height="40"/>
+                                                                                <rect key="frame" x="156.66666666666666" y="0.0" width="40" height="40"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="40" id="1yV-6X-U2n"/>
                                                                                     <constraint firstAttribute="width" secondItem="IU2-RU-1zV" secondAttribute="height" multiplier="1:1" id="Nic-gH-aV3"/>
                                                                                 </constraints>
                                                                             </imageView>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fFV-Bg-Te7" customClass="OpenSansLbl" customModule="ContactUnifier" customModuleProvider="target">
-                                                                                <rect key="frame" x="24" y="50" width="453.33333333333331" height="0.0"/>
+                                                                                <rect key="frame" x="24" y="50" width="305" height="0.0"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                                                 <color key="textColor" name="#1D1F20"/>
                                                                                 <nil key="highlightedColor"/>
@@ -9397,7 +9410,7 @@ if __name__ == "__main__":
                                                                                 </userDefinedRuntimeAttributes>
                                                                             </label>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No exact name matches found" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4gm-qa-Ef5" customClass="OpenSansLbl" customModule="ContactUnifier" customModuleProvider="target">
-                                                                                <rect key="frame" x="24" y="50" width="453.33333333333331" height="17"/>
+                                                                                <rect key="frame" x="24" y="50" width="305" height="17"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                                 <color key="textColor" name="#4D5256"/>
                                                                                 <nil key="highlightedColor"/>
@@ -9474,7 +9487,7 @@ if __name__ == "__main__":
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fpv-4a-mcm">
-                                                <rect key="frame" x="20" y="200.33333333333331" width="353" height="212.33333333333331"/>
+                                                <rect key="frame" x="20" y="844.33333333333326" width="353" height="212.33333333333326"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Frame-2" translatesAutoresizingMaskIntoConstraints="NO" id="ZRR-ce-qwS">
                                                         <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
@@ -9534,7 +9547,7 @@ if __name__ == "__main__":
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="acF-mT-Dxm">
-                                                        <rect key="frame" x="0.0" y="32.666666666666686" width="353" height="177.66666666666666"/>
+                                                        <rect key="frame" x="0.0" y="32.666666666666742" width="353" height="177.66666666666666"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contacts with identical first and last names that can be automatically merged." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1sf-Az-86o" customClass="OpenSansLbl" customModule="ContactUnifier" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="353" height="33.666666666666664"/>
@@ -9548,10 +9561,10 @@ if __name__ == "__main__":
                                                                 </userDefinedRuntimeAttributes>
                                                             </label>
                                                             <view clipsSubviews="YES" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="zkp-hB-e2k">
-                                                                <rect key="frame" x="0.0" y="45.666666666666686" width="353" height="132"/>
+                                                                <rect key="frame" x="0.0" y="45.666666666666742" width="353" height="132"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wpq-TC-zUD">
-                                                                        <rect key="frame" x="0.0" y="32.666666666666629" width="353" height="67"/>
+                                                                        <rect key="frame" x="0.0" y="32.666666666666515" width="353" height="67"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Frame 9" translatesAutoresizingMaskIntoConstraints="NO" id="Ejl-aq-Xsf">
                                                                                 <rect key="frame" x="156.66666666666666" y="0.0" width="40" height="40"/>
@@ -9561,7 +9574,7 @@ if __name__ == "__main__":
                                                                                 </constraints>
                                                                             </imageView>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EzH-0b-P4P" customClass="OpenSansLbl" customModule="ContactUnifier" customModuleProvider="target">
-                                                                                <rect key="frame" x="24" y="50.000000000000057" width="305" height="0.0"/>
+                                                                                <rect key="frame" x="24" y="50" width="305" height="0.0"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                                                 <color key="textColor" name="#1D1F20"/>
                                                                                 <nil key="highlightedColor"/>
@@ -9572,7 +9585,7 @@ if __name__ == "__main__":
                                                                                 </userDefinedRuntimeAttributes>
                                                                             </label>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No exact name matches found" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sJB-u9-G5f" customClass="OpenSansLbl" customModule="ContactUnifier" customModuleProvider="target">
-                                                                                <rect key="frame" x="24" y="50.000000000000057" width="305" height="17"/>
+                                                                                <rect key="frame" x="24" y="50" width="305" height="17"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                                 <color key="textColor" name="#4D5256"/>
                                                                                 <nil key="highlightedColor"/>
@@ -9648,7 +9661,7 @@ if __name__ == "__main__":
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="coc-A8-6SV">
-                                                <rect key="frame" x="20" y="442.66666666666669" width="353" height="212.66666666666669"/>
+                                                <rect key="frame" x="20" y="1086.6666666666667" width="353" height="212.66666666666674"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Frame-2" translatesAutoresizingMaskIntoConstraints="NO" id="hyr-ak-qgi">
                                                         <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
@@ -9658,7 +9671,7 @@ if __name__ == "__main__":
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email-Only Contacts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0eU-y3-vWo" customClass="OpenSansLbl" customModule="ContactUnifier" customModuleProvider="target">
-                                                        <rect key="frame" x="28" y="-0.66666666666662877" width="297" height="21.666666666666668"/>
+                                                        <rect key="frame" x="28" y="-0.66666666666674246" width="297" height="21.666666666666668"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                         <color key="textColor" name="#1D1F20"/>
                                                         <nil key="highlightedColor"/>
@@ -9722,10 +9735,10 @@ if __name__ == "__main__":
                                                                 </userDefinedRuntimeAttributes>
                                                             </label>
                                                             <view clipsSubviews="YES" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="bRX-Z3-EET">
-                                                                <rect key="frame" x="0.0" y="45.666666666666742" width="353" height="132"/>
+                                                                <rect key="frame" x="0.0" y="45.666666666666515" width="353" height="132"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yaK-cQ-GJY">
-                                                                        <rect key="frame" x="0.0" y="32.333333333333258" width="353" height="67"/>
+                                                                        <rect key="frame" x="0.0" y="32.333333333333485" width="353" height="67"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Frame 9" translatesAutoresizingMaskIntoConstraints="NO" id="WA2-wS-vMK">
                                                                                 <rect key="frame" x="156.66666666666666" y="0.0" width="40" height="40"/>
@@ -9822,7 +9835,7 @@ if __name__ == "__main__":
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jc8-W7-3YF">
-                                                <rect key="frame" x="20" y="685.33333333333337" width="353" height="212.33333333333337"/>
+                                                <rect key="frame" x="20" y="1329.3333333333333" width="353" height="212.33333333333326"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Frame-1 1" translatesAutoresizingMaskIntoConstraints="NO" id="Zxm-wr-AMG">
                                                         <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
@@ -9882,7 +9895,7 @@ if __name__ == "__main__":
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="tlX-cJ-EY6">
-                                                        <rect key="frame" x="0.0" y="32.666666666666629" width="353" height="177.66666666666666"/>
+                                                        <rect key="frame" x="0.0" y="32.666666666666742" width="353" height="177.66666666666666"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="These contacts have only a first or last name. Complete their information." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5EM-lO-cCe" customClass="OpenSansLbl" customModule="ContactUnifier" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="353" height="33.666666666666664"/>
@@ -9896,10 +9909,10 @@ if __name__ == "__main__":
                                                                 </userDefinedRuntimeAttributes>
                                                             </label>
                                                             <view clipsSubviews="YES" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="ecg-3g-KDp">
-                                                                <rect key="frame" x="0.0" y="45.666666666666629" width="353" height="132"/>
+                                                                <rect key="frame" x="0.0" y="45.666666666666742" width="353" height="132"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7in-OA-6U4">
-                                                                        <rect key="frame" x="0.0" y="32.666666666666742" width="353" height="67"/>
+                                                                        <rect key="frame" x="0.0" y="32.666666666666515" width="353" height="67"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Frame 9" translatesAutoresizingMaskIntoConstraints="NO" id="lP8-qy-XPF">
                                                                                 <rect key="frame" x="156.66666666666666" y="0.0" width="40" height="40"/>
@@ -9909,7 +9922,7 @@ if __name__ == "__main__":
                                                                                 </constraints>
                                                                             </imageView>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jrf-xx-ONg" customClass="OpenSansLbl" customModule="ContactUnifier" customModuleProvider="target">
-                                                                                <rect key="frame" x="24" y="49.999999999999886" width="305" height="0.0"/>
+                                                                                <rect key="frame" x="24" y="50" width="305" height="0.0"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                                                 <color key="textColor" name="#1D1F20"/>
                                                                                 <nil key="highlightedColor"/>
@@ -9920,7 +9933,7 @@ if __name__ == "__main__":
                                                                                 </userDefinedRuntimeAttributes>
                                                                             </label>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All named contacts have complete names" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rao-d1-8Sv" customClass="OpenSansLbl" customModule="ContactUnifier" customModuleProvider="target">
-                                                                                <rect key="frame" x="24" y="49.999999999999886" width="305" height="17"/>
+                                                                                <rect key="frame" x="24" y="50" width="305" height="17"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                                 <color key="textColor" name="#4D5256"/>
                                                                                 <nil key="highlightedColor"/>
@@ -9996,7 +10009,7 @@ if __name__ == "__main__":
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LRn-qG-EkK">
-                                                <rect key="frame" x="20" y="927.66666666666674" width="353" height="196"/>
+                                                <rect key="frame" x="20" y="1571.6666666666667" width="353" height="196"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Frame-1 1" translatesAutoresizingMaskIntoConstraints="NO" id="8Og-Qq-StJ">
                                                         <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
@@ -10170,7 +10183,7 @@ if __name__ == "__main__":
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="egY-ab-0gr">
-                                                <rect key="frame" x="20" y="1153.6666666666667" width="353" height="195.66666666666674"/>
+                                                <rect key="frame" x="20" y="1797.6666666666667" width="353" height="195.66666666666674"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Frame-1 1" translatesAutoresizingMaskIntoConstraints="NO" id="GXL-c4-ugf">
                                                         <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
@@ -10344,7 +10357,7 @@ if __name__ == "__main__":
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ybg-NQ-31x">
-                                                <rect key="frame" x="20" y="1379.3333333333333" width="353" height="229.33333333333326"/>
+                                                <rect key="frame" x="20" y="2023.3333333333333" width="353" height="229.33333333333326"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Frame-44" translatesAutoresizingMaskIntoConstraints="NO" id="frz-TS-6Lg">
                                                         <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
@@ -10354,7 +10367,7 @@ if __name__ == "__main__":
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address-Only Contacts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5K-oU-bTF" customClass="OpenSansLbl" customModule="ContactUnifier" customModuleProvider="target">
-                                                        <rect key="frame" x="28" y="-0.66666666666651508" width="297" height="21.666666666666668"/>
+                                                        <rect key="frame" x="28" y="-0.66666666666696983" width="297" height="21.666666666666668"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                         <color key="textColor" name="#1D1F20"/>
                                                         <nil key="highlightedColor"/>
@@ -10418,10 +10431,10 @@ if __name__ == "__main__":
                                                                 </userDefinedRuntimeAttributes>
                                                             </label>
                                                             <view clipsSubviews="YES" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="Yma-cB-thJ">
-                                                                <rect key="frame" x="0.0" y="62.333333333333485" width="353" height="132"/>
+                                                                <rect key="frame" x="0.0" y="62.33333333333303" width="353" height="132"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MBN-Ix-R2v">
-                                                                        <rect key="frame" x="0.0" y="32.333333333333258" width="353" height="67"/>
+                                                                        <rect key="frame" x="0.0" y="32.333333333333485" width="353" height="67"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Frame 9" translatesAutoresizingMaskIntoConstraints="NO" id="BMa-t4-7Fa">
                                                                                 <rect key="frame" x="156.66666666666666" y="0.0" width="40" height="40"/>
@@ -10573,6 +10586,11 @@ if __name__ == "__main__":
                             <constraint firstItem="MSC-AH-CyH" firstAttribute="centerX" secondItem="0rX-rf-FPd" secondAttribute="centerX" id="yEL-DC-Wph"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="duplicateContactsEmptyView" destination="qcC-kJ-LDC" id="ZJX-JS-otd"/>
+                        <outlet property="duplicateContactsTbl" destination="q6A-dD-vZ0" id="ABn-xD-lQd"/>
+                        <outlet property="hideShowDuplicateContactsBtn" destination="PPk-V7-QRx" id="Vlc-Ct-URu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bmL-hO-hAh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

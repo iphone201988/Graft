@@ -126,6 +126,14 @@
 		8BE0C3DE2F4C5CCD00817A90 /* OpenSans-Italic-VariableFont_wdth,wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8BE0C3B52F4C5CCD00817A90 /* OpenSans-Italic-VariableFont_wdth,wght.ttf */; };
 		8BE0C3DF2F4C5CCD00817A90 /* OpenSans-VariableFont_wdth,wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8BE0C3B62F4C5CCD00817A90 /* OpenSans-VariableFont_wdth,wght.ttf */; };
 		8BE0C3E02F4C5CCD00817A90 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8BE0C3B72F4C5CCD00817A90 /* README.txt */; };
+		8BF535C82F5594C200262418 /* DuplicateContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF535C62F5594C200262418 /* DuplicateContactCell.swift */; };
+		8BF535C92F5594C200262418 /* DuplicateContactCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BF535C72F5594C200262418 /* DuplicateContactCell.xib */; };
+		8BF535CC2F559F1200262418 /* MergeContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF535CA2F559F1200262418 /* MergeContactCell.swift */; };
+		8BF535CD2F559F1200262418 /* MergeContactCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BF535CB2F559F1200262418 /* MergeContactCell.xib */; };
+		8BF535D02F55A55300262418 /* MergeContactInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF535CE2F55A55300262418 /* MergeContactInfoCell.swift */; };
+		8BF535D12F55A55300262418 /* MergeContactInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BF535CF2F55A55300262418 /* MergeContactInfoCell.xib */; };
+		8BF535D42F55AF4800262418 /* MergeContactInfo2Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF535D22F55AF4800262418 /* MergeContactInfo2Cell.swift */; };
+		8BF535D52F55AF4800262418 /* MergeContactInfo2Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BF535D32F55AF4800262418 /* MergeContactInfo2Cell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -250,6 +258,14 @@
 		8BE0C3B52F4C5CCD00817A90 /* OpenSans-Italic-VariableFont_wdth,wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Italic-VariableFont_wdth,wght.ttf"; sourceTree = "<group>"; };
 		8BE0C3B62F4C5CCD00817A90 /* OpenSans-VariableFont_wdth,wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-VariableFont_wdth,wght.ttf"; sourceTree = "<group>"; };
 		8BE0C3B72F4C5CCD00817A90 /* README.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		8BF535C62F5594C200262418 /* DuplicateContactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuplicateContactCell.swift; sourceTree = "<group>"; };
+		8BF535C72F5594C200262418 /* DuplicateContactCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DuplicateContactCell.xib; sourceTree = "<group>"; };
+		8BF535CA2F559F1200262418 /* MergeContactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MergeContactCell.swift; sourceTree = "<group>"; };
+		8BF535CB2F559F1200262418 /* MergeContactCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MergeContactCell.xib; sourceTree = "<group>"; };
+		8BF535CE2F55A55300262418 /* MergeContactInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MergeContactInfoCell.swift; sourceTree = "<group>"; };
+		8BF535CF2F55A55300262418 /* MergeContactInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MergeContactInfoCell.xib; sourceTree = "<group>"; };
+		8BF535D22F55AF4800262418 /* MergeContactInfo2Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MergeContactInfo2Cell.swift; sourceTree = "<group>"; };
+		8BF535D32F55AF4800262418 /* MergeContactInfo2Cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MergeContactInfo2Cell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -337,6 +353,7 @@
 				8B6674AD2F4C7D8300FFEF39 /* DashboardCell.swift */,
 				8BE0C2042F4C534800817A90 /* DashboardVC.swift */,
 				8BD1C12C2F503A8B00B7C2CF /* DayCell.swift */,
+				8BF535C62F5594C200262418 /* DuplicateContactCell.swift */,
 				8B6674A42F4C6EE100FFEF39 /* Enums.swift */,
 				8BAFA4CE2F4DC8C400C85738 /* GroupCell.swift */,
 				8BAFA4CC2F4DC83100C85738 /* GroupsVC.swift */,
@@ -348,6 +365,9 @@
 				8B6674752F4C5EF200FFEF39 /* LogHandler.swift */,
 				8BD1C1282F50044000B7C2CF /* LostTouchCell.swift */,
 				8BD1C1262F50020300B7C2CF /* LostTouchVC.swift */,
+				8BF535CA2F559F1200262418 /* MergeContactCell.swift */,
+				8BF535D22F55AF4800262418 /* MergeContactInfo2Cell.swift */,
+				8BF535CE2F55A55300262418 /* MergeContactInfoCell.swift */,
 				8B6674732F4C5EC700FFEF39 /* OpenSansLbl.swift */,
 				8BE0C2122F4C54FA00817A90 /* OptionCell.swift */,
 				8BD1C1382F5068ED00B7C2CF /* Protocols.swift */,
@@ -367,10 +387,14 @@
 				8BAFA4BC2F4D6F2200C85738 /* CustomOptionCell.xib */,
 				8B6674AE2F4C7D8300FFEF39 /* DashboardCell.xib */,
 				8BD1C12D2F503A8B00B7C2CF /* DayCell.xib */,
+				8BF535C72F5594C200262418 /* DuplicateContactCell.xib */,
 				8BAFA4CF2F4DC8C400C85738 /* GroupCell.xib */,
 				8BE0C2172F4C563300817A90 /* HeaderCell.xib */,
 				8BD1C1352F50677A00B7C2CF /* InviteCell.xib */,
 				8BD1C1292F50044000B7C2CF /* LostTouchCell.xib */,
+				8BF535CB2F559F1200262418 /* MergeContactCell.xib */,
+				8BF535D32F55AF4800262418 /* MergeContactInfo2Cell.xib */,
+				8BF535CF2F55A55300262418 /* MergeContactInfoCell.xib */,
 				8BE0C2132F4C54FA00817A90 /* OptionCell.xib */,
 				8BAFA4C02F4D9AC600C85738 /* TagCell.xib */,
 				8B090DA22F4EB562005606AA /* TagColorCell.xib */,
@@ -540,14 +564,17 @@
 				8BE0C3CF2F4C5CCD00817A90 /* OpenSans_SemiCondensed-SemiBold.ttf in Resources */,
 				8B6674BE2F4CA89E00FFEF39 /* ContactCell.xib in Resources */,
 				8BE0C3D02F4C5CCD00817A90 /* OpenSans_SemiCondensed-SemiBoldItalic.ttf in Resources */,
+				8BF535D12F55A55300262418 /* MergeContactInfoCell.xib in Resources */,
 				8BE0C3D12F4C5CCD00817A90 /* OpenSans-Bold.ttf in Resources */,
 				8BE0C3D22F4C5CCD00817A90 /* OpenSans-BoldItalic.ttf in Resources */,
 				8BE0C3D32F4C5CCD00817A90 /* OpenSans-ExtraBold.ttf in Resources */,
 				8BE0C3D42F4C5CCD00817A90 /* OpenSans-ExtraBoldItalic.ttf in Resources */,
+				8BF535CD2F559F1200262418 /* MergeContactCell.xib in Resources */,
 				8BE0C3D52F4C5CCD00817A90 /* OpenSans-Italic.ttf in Resources */,
 				8BE0C3D62F4C5CCD00817A90 /* OpenSans-Light.ttf in Resources */,
 				8BE0C3D72F4C5CCD00817A90 /* OpenSans-LightItalic.ttf in Resources */,
 				8BE0C3D82F4C5CCD00817A90 /* OpenSans-Medium.ttf in Resources */,
+				8BF535D52F55AF4800262418 /* MergeContactInfo2Cell.xib in Resources */,
 				8B090DAA2F4EE61C005606AA /* ConnectedSourceCell.xib in Resources */,
 				8BAFA4BE2F4D6F2200C85738 /* CustomOptionCell.xib in Resources */,
 				8B6674AF2F4C7D8300FFEF39 /* DashboardCell.xib in Resources */,
@@ -555,6 +582,7 @@
 				8BE0C3DA2F4C5CCD00817A90 /* OpenSans-Regular.ttf in Resources */,
 				8BD1C1362F50677A00B7C2CF /* InviteCell.xib in Resources */,
 				8BD1C12E2F503A8B00B7C2CF /* DayCell.xib in Resources */,
+				8BF535C92F5594C200262418 /* DuplicateContactCell.xib in Resources */,
 				8BE0C3DB2F4C5CCD00817A90 /* OpenSans-SemiBold.ttf in Resources */,
 				8BE0C3DC2F4C5CCD00817A90 /* OpenSans-SemiBoldItalic.ttf in Resources */,
 				8B090DB02F4F22CB005606AA /* TimelineCell.xib in Resources */,
@@ -583,6 +611,7 @@
 				8B090DA32F4EB562005606AA /* TagColorCell.swift in Sources */,
 				8B66748F2F4C645300FFEF39 /* NotificationCenterName.swift in Sources */,
 				8B6674902F4C645300FFEF39 /* UILabelExtensions.swift in Sources */,
+				8BF535D02F55A55300262418 /* MergeContactInfoCell.swift in Sources */,
 				8BAFA4D12F4DC8C400C85738 /* GroupCell.swift in Sources */,
 				8B6674912F4C645300FFEF39 /* UIButtonExtension.swift in Sources */,
 				8BD1C1392F5068ED00B7C2CF /* Protocols.swift in Sources */,
@@ -593,6 +622,7 @@
 				8B6674952F4C645300FFEF39 /* UITextViewExtension.swift in Sources */,
 				8BAFA4CD2F4DC83100C85738 /* GroupsVC.swift in Sources */,
 				8B090DA62F4ECB6D005606AA /* ImportSyncVC.swift in Sources */,
+				8BF535CC2F559F1200262418 /* MergeContactCell.swift in Sources */,
 				8B6674962F4C645300FFEF39 /* DispatchQueue.swift in Sources */,
 				8B6674972F4C645300FFEF39 /* UIColorExt.swift in Sources */,
 				8B6674982F4C645300FFEF39 /* DoubleExt.swift in Sources */,
@@ -607,6 +637,7 @@
 				8BD1C1272F50020300B7C2CF /* LostTouchVC.swift in Sources */,
 				8BAFA4C42F4DBD0400C85738 /* AddNewContactVC.swift in Sources */,
 				8B6674A52F4C6EE100FFEF39 /* Enums.swift in Sources */,
+				8BF535C82F5594C200262418 /* DuplicateContactCell.swift in Sources */,
 				8BD1C1312F505C2B00B7C2CF /* InviteListVC.swift in Sources */,
 				8B6674A12F4C649600FFEF39 /* Toast.swift in Sources */,
 				8BAFA4C12F4D9AC600C85738 /* TagCell.swift in Sources */,
@@ -625,6 +656,7 @@
 				8BD1C13B2F506C1100B7C2CF /* CleanUpContactsVC.swift in Sources */,
 				8B6674A72F4C6EFD00FFEF39 /* SharedMethods.swift in Sources */,
 				8B6674762F4C5EF200FFEF39 /* LogHandler.swift in Sources */,
+				8BF535D42F55AF4800262418 /* MergeContactInfo2Cell.swift in Sources */,
 				8B090DAF2F4F22CB005606AA /* TimelineCell.swift in Sources */,
 				8B6674742F4C5EC700FFEF39 /* OpenSansLbl.swift in Sources */,
 				8BE0C2072F4C534800817A90 /* SceneDelegate.swift in Sources */,
