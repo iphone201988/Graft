@@ -1,7 +1,19 @@
 import UIKit
 
 class MergeContactInfo2Cell: UICollectionViewCell {
-
+    
+    @IBOutlet weak var nameBtn: UIButton!
+    @IBOutlet weak var phoneBtn: UIButton!
+    @IBOutlet weak var companyBtn: UIButton!
+    
+    @IBOutlet weak var nameIcon: UIImageView!
+    @IBOutlet weak var phoneIcon: UIImageView!
+    @IBOutlet weak var companyIcon: UIImageView!
+    
+    @IBOutlet weak var nameView: UIView!
+    @IBOutlet weak var phoneView: UIView!
+    @IBOutlet weak var companyView: UIView!
+    
     class var identifier: String {
         return String(describing: self)
     }
@@ -14,5 +26,5 @@ class MergeContactInfo2Cell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
 }

@@ -63,6 +63,9 @@
 		8BAFA4D02F4DC8C400C85738 /* GroupCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BAFA4CF2F4DC8C400C85738 /* GroupCell.xib */; };
 		8BAFA4D12F4DC8C400C85738 /* GroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BAFA4CE2F4DC8C400C85738 /* GroupCell.swift */; };
 		8BAFA4D32F4DD55100C85738 /* ConnectYourContactsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BAFA4D22F4DD55100C85738 /* ConnectYourContactsVC.swift */; };
+		8BCC4F642F56E4BE00A7008C /* IncompleteNameCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BCC4F632F56E4BE00A7008C /* IncompleteNameCell.xib */; };
+		8BCC4F652F56E4BE00A7008C /* IncompleteNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCC4F622F56E4BE00A7008C /* IncompleteNameCell.swift */; };
+		8BCC4F672F570E7F00A7008C /* CompleteContactInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCC4F662F570E7F00A7008C /* CompleteContactInfoVC.swift */; };
 		8BD1C1272F50020300B7C2CF /* LostTouchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD1C1262F50020300B7C2CF /* LostTouchVC.swift */; };
 		8BD1C12A2F50044000B7C2CF /* LostTouchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BD1C1292F50044000B7C2CF /* LostTouchCell.xib */; };
 		8BD1C12B2F50044000B7C2CF /* LostTouchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD1C1282F50044000B7C2CF /* LostTouchCell.swift */; };
@@ -194,6 +197,9 @@
 		8BAFA4CE2F4DC8C400C85738 /* GroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCell.swift; sourceTree = "<group>"; };
 		8BAFA4CF2F4DC8C400C85738 /* GroupCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupCell.xib; sourceTree = "<group>"; };
 		8BAFA4D22F4DD55100C85738 /* ConnectYourContactsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectYourContactsVC.swift; sourceTree = "<group>"; };
+		8BCC4F622F56E4BE00A7008C /* IncompleteNameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncompleteNameCell.swift; sourceTree = "<group>"; };
+		8BCC4F632F56E4BE00A7008C /* IncompleteNameCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IncompleteNameCell.xib; sourceTree = "<group>"; };
+		8BCC4F662F570E7F00A7008C /* CompleteContactInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteContactInfoVC.swift; sourceTree = "<group>"; };
 		8BD1C1262F50020300B7C2CF /* LostTouchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LostTouchVC.swift; sourceTree = "<group>"; };
 		8BD1C1282F50044000B7C2CF /* LostTouchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LostTouchCell.swift; sourceTree = "<group>"; };
 		8BD1C1292F50044000B7C2CF /* LostTouchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LostTouchCell.xib; sourceTree = "<group>"; };
@@ -339,6 +345,7 @@
 				8BE0C1FE2F4C534800817A90 /* Info.plist */,
 				8B090DAB2F4F1F8D005606AA /* ActivityTimelineVC.swift */,
 				8BAFA4C32F4DBD0400C85738 /* AddNewContactVC.swift */,
+				8BCC4F662F570E7F00A7008C /* CompleteContactInfoVC.swift */,
 				8B6674B92F4CA4CF00FFEF39 /* AllContactsVC.swift */,
 				8BE0C1FC2F4C534800817A90 /* AppDelegate.swift */,
 				8BD1C13A2F506C1100B7C2CF /* CleanUpContactsVC.swift */,
@@ -359,6 +366,7 @@
 				8BAFA4CC2F4DC83100C85738 /* GroupsVC.swift */,
 				8BE0C2162F4C563300817A90 /* HeaderCell.swift */,
 				8B090DA52F4ECB6D005606AA /* ImportSyncVC.swift */,
+				8BCC4F622F56E4BE00A7008C /* IncompleteNameCell.swift */,
 				8BD1C1342F50677A00B7C2CF /* InviteCell.swift */,
 				8BD1C1302F505C2B00B7C2CF /* InviteListVC.swift */,
 				8B6674A22F4C64AA00FFEF39 /* KeyboardEventListener.swift */,
@@ -390,6 +398,7 @@
 				8BF535C72F5594C200262418 /* DuplicateContactCell.xib */,
 				8BAFA4CF2F4DC8C400C85738 /* GroupCell.xib */,
 				8BE0C2172F4C563300817A90 /* HeaderCell.xib */,
+				8BCC4F632F56E4BE00A7008C /* IncompleteNameCell.xib */,
 				8BD1C1352F50677A00B7C2CF /* InviteCell.xib */,
 				8BD1C1292F50044000B7C2CF /* LostTouchCell.xib */,
 				8BF535CB2F559F1200262418 /* MergeContactCell.xib */,
@@ -555,6 +564,7 @@
 				8BE0C3C72F4C5CCD00817A90 /* OpenSans_SemiCondensed-ExtraBold.ttf in Resources */,
 				8BE0C3C82F4C5CCD00817A90 /* OpenSans_SemiCondensed-ExtraBoldItalic.ttf in Resources */,
 				8BE0C3C92F4C5CCD00817A90 /* OpenSans_SemiCondensed-Italic.ttf in Resources */,
+				8BCC4F642F56E4BE00A7008C /* IncompleteNameCell.xib in Resources */,
 				8BE0C3CA2F4C5CCD00817A90 /* OpenSans_SemiCondensed-Light.ttf in Resources */,
 				8BE0C3CB2F4C5CCD00817A90 /* OpenSans_SemiCondensed-LightItalic.ttf in Resources */,
 				8BE0C3CC2F4C5CCD00817A90 /* OpenSans_SemiCondensed-Medium.ttf in Resources */,
@@ -619,6 +629,7 @@
 				8B6674922F4C645300FFEF39 /* TableViewExt.swift in Sources */,
 				8B6674932F4C645300FFEF39 /* UIWindowExtension.swift in Sources */,
 				8B6674942F4C645300FFEF39 /* UIImageViewExtension.swift in Sources */,
+				8BCC4F652F56E4BE00A7008C /* IncompleteNameCell.swift in Sources */,
 				8B6674952F4C645300FFEF39 /* UITextViewExtension.swift in Sources */,
 				8BAFA4CD2F4DC83100C85738 /* GroupsVC.swift in Sources */,
 				8B090DA62F4ECB6D005606AA /* ImportSyncVC.swift in Sources */,
@@ -631,6 +642,7 @@
 				8B66749B2F4C645300FFEF39 /* UIImageExt.swift in Sources */,
 				8B6674A32F4C64AA00FFEF39 /* KeyboardEventListener.swift in Sources */,
 				8B090DAC2F4F1F8D005606AA /* ActivityTimelineVC.swift in Sources */,
+				8BCC4F672F570E7F00A7008C /* CompleteContactInfoVC.swift in Sources */,
 				8B6674B82F4C963100FFEF39 /* ContactTableViewCell.swift in Sources */,
 				8B090DA92F4EE61C005606AA /* ConnectedSourceCell.swift in Sources */,
 				8B66749C2F4C645300FFEF39 /* ViewExt.swift in Sources */,
