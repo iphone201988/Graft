@@ -188,4 +188,12 @@ class SharedMethods {
         
         topController.present(activityVC, animated: true, completion: nil)
     }
+    
+    func getInitials(from name: String) -> String {
+        return name
+            .split(separator: " ")
+            .compactMap { $0.first }
+            .map { String($0).uppercased() }
+            .joined()
+    }
 }

@@ -9,6 +9,13 @@ class ContactCell: UITableViewCell {
     @IBOutlet weak var contactView: UIStackView!
     @IBOutlet weak var companyView: UIStackView!
     @IBOutlet weak var companyTopView: UIView!
+    @IBOutlet weak var starBtn: UIButton!
+    @IBOutlet weak var moreBtn: UIButton!
+    @IBOutlet weak var nameLbl: OpenSansLbl!
+    @IBOutlet weak var emailLbl: OpenSansLbl!
+    @IBOutlet weak var phoneLbl: OpenSansLbl!
+    @IBOutlet weak var companyLbl: OpenSansLbl!
+    @IBOutlet weak var initialLbl: OpenSansLbl!
     
     class var identifier: String {
         return String(describing: self)

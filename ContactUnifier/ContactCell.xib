@@ -71,7 +71,7 @@
                                             <constraint firstAttribute="width" constant="16" id="xrU-AY-TX4"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KA" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NAh-Bc-Avt" customClass="OpenSansLbl" customModule="ContactUnifier" customModuleProvider="target">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NAh-Bc-Avt" customClass="OpenSansLbl" customModule="ContactUnifier" customModuleProvider="target">
                                         <rect key="frame" x="5" y="5" width="30" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -365,13 +365,20 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
+                <outlet property="companyLbl" destination="264-Xh-oct" id="rZL-OG-kQE"/>
                 <outlet property="companyTopView" destination="Dbb-pK-c7G" id="BvQ-rn-vf4"/>
                 <outlet property="companyView" destination="81T-yN-SCg" id="QOC-Jz-z2h"/>
                 <outlet property="contactView" destination="Auq-aE-Y19" id="V34-3S-NeW"/>
+                <outlet property="emailLbl" destination="8m9-QG-WV0" id="n1v-4d-dpX"/>
                 <outlet property="emailView" destination="kz7-Jy-b5z" id="YhU-AY-2A9"/>
+                <outlet property="initialLbl" destination="NAh-Bc-Avt" id="qW5-YY-MET"/>
+                <outlet property="moreBtn" destination="7oe-gf-7gR" id="Oja-Mw-JQ8"/>
+                <outlet property="nameLbl" destination="t6f-OO-S8e" id="nPd-Vz-2Fw"/>
                 <outlet property="nameView" destination="6FF-N6-vQ7" id="JVS-fV-UK7"/>
+                <outlet property="phoneLbl" destination="4nH-Qo-pph" id="haJ-za-BqI"/>
                 <outlet property="sourceLbl" destination="HP5-dd-mbr" id="gPB-S0-ZLU"/>
                 <outlet property="sourceView" destination="7Ey-N8-YMz" id="bDD-E6-bbc"/>
+                <outlet property="starBtn" destination="7cP-aG-DPd" id="IPZ-Yh-BWb"/>
             </connections>
             <point key="canvasLocation" x="74.809160305343511" y="16.197183098591552"/>
         </tableViewCell>

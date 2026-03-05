@@ -21,6 +21,7 @@ class AllContactsVC: UIViewController {
     @IBOutlet weak var tagIcon: UIImageView!
     @IBOutlet weak var tagLbl: OpenSansLbl!
     @IBOutlet weak var emptyView: UIView!
+    @IBOutlet weak var contactsCountLbl: OpenSansLbl!
     
     var sources = [["tag": "All Sources", "color": ""],
                    ["tag": "Vcard", "color": ""],
@@ -43,17 +44,33 @@ class AllContactsVC: UIViewController {
                 ["tag": "tech", "color": "#F59E0B"],
                 ["tag": "vip", "color": "#0EA5E9"],
                 ["tag": "wellness", "color": "#84CC16"]]
-
+    
     var selectedSource: [String: Any] = ["tag": "All Sources", "color": ""]
     var selectedTag: [String: Any] = ["tag": "All Tags", "color": ""]
     var sourcePopupView: TagPopupView?
     var tagPopupView: TagPopupView?
+    var viewAllFavorites: Bool = false
+    var addedContacts = [NewContactInfo]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         emptyView.isHidden = true
         tableView.isHidden = false
+        
+        let info1 = NewContactInfo(firstName: "Aaron", lastName: "Cohn", email: "support@graft.com", phoneNumber: "(203)524-7262", initials: "AC")
+        let info2 = NewContactInfo(firstName: "David", lastName: "Hanley", email: "support@graft.com", phoneNumber: "(203)524-7262", initials: "DH")
+        let info3 = NewContactInfo(firstName: "Abby", lastName: "Barlett", email: "support@graft.com", phoneNumber: "(203)524-7262", initials: "AB")
+        let info4 = NewContactInfo(firstName: "Agustina", lastName: "Hobbs", email: "support@graft.com", phoneNumber: "(203)524-7262", initials: "AH")
+        
+        addedContacts.append(info1)
+        addedContacts.append(info2)
+        addedContacts.append(info3)
+        addedContacts.append(info4)
+        
+        contactsCountLbl.text = "\(addedContacts.count) contacts"
+        
+        tableView.reloadData()
     }
     
     @IBAction func menu(_ sender: UIButton) {
@@ -72,6 +89,7 @@ class AllContactsVC: UIViewController {
         let storyboard = AppStoryboards.main.storyboardInstance
         guard let destVC = storyboard.instantiateViewController(withIdentifier: "AddNewContactVC") as? AddNewContactVC
         else { return }
+        destVC.servicesEvents = self
         SharedMethods.shared.presentVC(destVC: destVC)
     }
     
@@ -187,7 +205,7 @@ class AllContactsVC: UIViewController {
 extension AllContactsVC: UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        5
+        addedContacts.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -210,6 +228,16 @@ extension AllContactsVC: UITableViewDelegate,UITableViewDataSource {
             cell.companyView.isHidden = false
             cell.companyTopView.isHidden = false
         }
+        
+        let details = addedContacts[indexPath.row]
+        cell.initialLbl.text = details.initials ?? ""
+        let fn = details.firstName ?? ""
+        let ln = details.lastName ?? ""
+        let fullName = "\(fn) \(ln)".trimmingCharacters(in: .whitespaces)
+        cell.nameLbl.text = fullName
+        cell.emailLbl.text = details.email ?? ""
+        cell.phoneLbl.text = details.phoneNumber ?? ""
+        
         return cell
     }
 }
@@ -300,5 +328,13 @@ class TagPopupView: UIView, UITableViewDelegate, UITableViewDataSource {
         let tag = tags[indexPath.row]
         selectedTag = tag
         didSelectTag?(tag)
+    }
+}
+
+extension AllContactsVC: ServicesEvents {
+    func createdContact(info: NewContactInfo) {
+        addedContacts.insert(info, at: 0)
+        contactsCountLbl.text = "\(addedContacts.count) contacts"
+        tableView.reloadData()
     }
 }

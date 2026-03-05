@@ -90,6 +90,8 @@ class CleanUpContactsVC: UIViewController {
     
     var selectedAddressOnlyContacts = [String]()
     
+    var isActiveDuplicateContacts: Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         hideShowDuplicateContactsBtn.isSelected = false
@@ -141,6 +143,12 @@ class CleanUpContactsVC: UIViewController {
         }
         
         duplicateContactsTbl.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
+        
+        if isActiveDuplicateContacts {
+            hideShowDuplicateContactsBtn.isSelected = true
+            duplicateContactsEmptyView.isHidden = true
+            duplicateContactsTbl.isHidden = false
+        }
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
@@ -651,31 +659,3 @@ extension CleanUpContactsVC: UICollectionViewDelegate, UICollectionViewDataSourc
         }
     }
 }
-
-enum MergeContactEvents {
-    case normal
-    case merge
-}
-
-struct MergeContacts {
-    var name: String
-    var source: String
-    var phone: String?
-    var email: String?
-    var company: String?
-    var isNameChoose: Bool = false
-    var isPhoneChoose: Bool = false
-    var isCompanyChoose: Bool = false
-}
-
-struct ContactInfo {
-    var total: Int
-    var info: [MergeContacts]
-    var event: MergeContactEvents = .normal
-}
-
-struct Contacts {
-    var data: [ContactInfo]
-}
-
-var width = 0.0

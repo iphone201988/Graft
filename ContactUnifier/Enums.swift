@@ -359,3 +359,8 @@ enum PurchaseTypes: String {
         }
     }
 }
+
+enum MergeContactEvents {
+    case normal
+    case merge
+}

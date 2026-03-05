@@ -53,6 +53,14 @@ class DashboardVC: UIViewController {
         }
     }
     
+    @IBOutlet weak var dashboardOptionsCollectionView: UICollectionView! {
+        didSet {
+            dashboardOptionsCollectionView.registerCellFromNib(cellID: DashboardOptionCell.identifier)
+            dashboardOptionsCollectionView.showsVerticalScrollIndicator = false
+            dashboardOptionsCollectionView.showsHorizontalScrollIndicator = false
+        }
+    }
+    
     @IBOutlet weak var customizeBtn: UIButton!
     @IBOutlet weak var customizeView: UIView!
     @IBOutlet weak var resetView: UIView!
@@ -63,7 +71,7 @@ class DashboardVC: UIViewController {
     @IBOutlet weak var optionsBottomView: UIView!
     
     var dashboardMenus = [["title": "Total Contacts", "count": "1393", "desc": "Across all sources", "icon": "Frame-2"],
-                          ["title": "Duplicate Found", "count": "710", "desc": "Need review", "icon": "Frame 2"],
+                          ["title": "Duplicates Found", "count": "710", "desc": "Need review", "icon": "Frame 2"],
                           ["title": "Lost Touch", "count": "1344", "desc": "No contact in 90+ days", "icon": "Frame-1 1"],
                           ["title": "Connected Sources", "count": "8", "desc": "Active sync sources", "icon": "Frame-2 1"]]
     
@@ -138,6 +146,19 @@ class DashboardVC: UIViewController {
         resetDoneBottomView.isHidden = true
         optionsView.isHidden = true
         optionsBottomView.isHidden = true
+    }
+    
+    @IBAction func viewAllRecentActivity(_ sender: UIButton) {
+        selectedOptions = "Activity Timeline"
+        SharedMethods.shared.pushToWithoutData(destVC: ActivityTimelineVC.self, storyboard: .main, isAnimated: false)
+    }
+    
+    @IBAction func viewAllFavorites(_ sender: UIButton) {
+        selectedOptions = "All Contacts"
+        let sb = AppStoryboards.main.storyboardInstance
+        let destVC = sb.instantiateViewController(withIdentifier: "AllContactsVC") as! AllContactsVC
+        destVC.viewAllFavorites = true
+        SharedMethods.shared.pushTo(destVC: destVC, isAnimated: false)
     }
 }
 
@@ -240,6 +261,42 @@ extension DashboardVC: UITableViewDelegate,UITableViewDataSource {
             return cell
         }
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        
+        if tableView == recTableView {
+            
+        } else if tableView == favTableView {
+            
+        } else if tableView == birthdayTableView {
+            
+        } else {
+            let details = dashboardMenus[indexPath.row]
+            switch details["title"] ?? "" {
+            case "Total Contacts":
+                selectedOptions = "All Contacts"
+                SharedMethods.shared.pushToWithoutData(destVC: AllContactsVC.self, storyboard: .main, isAnimated: false)
+                
+            case "Duplicates Found":
+                selectedOptions = "Clean Up"
+                let sb = AppStoryboards.main.storyboardInstance
+                let destVC = sb.instantiateViewController(withIdentifier: "CleanUpContactsVC") as! CleanUpContactsVC
+                destVC.isActiveDuplicateContacts = true
+                SharedMethods.shared.pushTo(destVC: destVC, isAnimated: false)
+                
+            case "Lost Touch":
+                selectedOptions = "Lost Touch"
+                SharedMethods.shared.pushToWithoutData(destVC: LostTouchVC.self, storyboard: .main, isAnimated: false)
+                
+            case "Connected Sources":
+                selectedOptions = "Import & Sync"
+                SharedMethods.shared.pushToWithoutData(destVC: ImportSyncVC.self, storyboard: .main, isAnimated: false)
+                
+            default: break
+            }
+        }
+    }
 }
 
 extension DashboardVC: UICollectionViewDataSource,
@@ -247,77 +304,127 @@ extension DashboardVC: UICollectionViewDataSource,
                        UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        customOptions.count
+        if collectionView == dashboardOptionsCollectionView {
+            dashboardMenus.count
+        } else {
+            customOptions.count
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let text = customOptions[indexPath.item]
-        let font = UIFont.systemFont(ofSize: 12, weight: .medium)
-        let textWidth = (text as NSString).size(withAttributes: [.font: font]).width
-        let horizontalPadding: CGFloat = 26  // 32 → 24 karo
-        let iconWidth: CGFloat = 16
-        let spacing: CGFloat = 13
-        let totalWidth = textWidth + horizontalPadding + iconWidth + spacing
-        return CGSize(width: indexPath.row == 0 ? 40 : totalWidth, height: 32)
+        if collectionView == dashboardOptionsCollectionView {
+            let width = dashboardOptionsCollectionView.frame.width/2
+            return CGSize(width: width, height: 150)
+        } else {
+            let text = customOptions[indexPath.item]
+            let font = UIFont.systemFont(ofSize: 12, weight: .medium)
+            let textWidth = (text as NSString).size(withAttributes: [.font: font]).width
+            let horizontalPadding: CGFloat = 26  // 32 → 24 karo
+            let iconWidth: CGFloat = 16
+            let spacing: CGFloat = 13
+            let totalWidth = textWidth + horizontalPadding + iconWidth + spacing
+            return CGSize(width: indexPath.row == 0 ? 40 : totalWidth, height: 32)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomOptionCell.identifier, for: indexPath) as! CustomOptionCell
-        let option = customOptions[indexPath.item]
-        cell.title.text = option
-        cell.iconWidth.constant = 16
-        cell.iconSpacing.constant = 13
-        cell.title.font = UIFont(name: "OpenSans-Medium", size: 12.0)
-        
-        if selectedCustomOptions.contains(option) {
-            cell.optionView.backgroundColor = UIColor(named: "#155DC1")
-            cell.optionView.borderWidth = 0.0
-            cell.eyeIcon.image = UIImage(named: "Frame-1 2")
-            cell.title.textColor = UIColor(named: "#F9FAFB")
+        if collectionView == dashboardOptionsCollectionView {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DashboardOptionCell.identifier, for: indexPath) as! DashboardOptionCell
+            let details = dashboardMenus[indexPath.row]
+            cell.titleLbl1.text = details["title"]
+            cell.titleLbl2.text = details["count"]
+            cell.titleLbl3.text = details["desc"]
+            cell.icon.image = UIImage(named: details["icon"] ?? "")
+            return cell
+            
         } else {
-            cell.optionView.backgroundColor = .clear
-            cell.optionView.borderWidth = 1.0
-            cell.eyeIcon.image = UIImage(named: "Frame 4")
-            cell.title.textColor = UIColor(named: "#1D1F20")
+            
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomOptionCell.identifier, for: indexPath) as! CustomOptionCell
+            let option = customOptions[indexPath.item]
+            cell.title.text = option
+            cell.iconWidth.constant = 16
+            cell.iconSpacing.constant = 13
+            cell.title.font = UIFont(name: "OpenSans-Medium", size: 12.0)
+            
+            if selectedCustomOptions.contains(option) {
+                cell.optionView.backgroundColor = UIColor(named: "#155DC1")
+                cell.optionView.borderWidth = 0.0
+                cell.eyeIcon.image = UIImage(named: "Frame-1 2")
+                cell.title.textColor = UIColor(named: "#F9FAFB")
+            } else {
+                cell.optionView.backgroundColor = .clear
+                cell.optionView.borderWidth = 1.0
+                cell.eyeIcon.image = UIImage(named: "Frame 4")
+                cell.title.textColor = UIColor(named: "#1D1F20")
+            }
+            
+            if indexPath.row == 0 {
+                cell.optionView.backgroundColor = .clear
+                cell.optionView.borderWidth = 0.0
+                cell.eyeIcon.image = UIImage(named: "Frame 4")
+                cell.title.textColor = UIColor(named: "#1D1F20")
+                cell.title.font = UIFont(name: "OpenSans-Medium", size: 14.0)
+                cell.iconWidth.constant = 0
+                cell.iconSpacing.constant = 0
+            }
+            
+            return cell
         }
-        
-        if indexPath.row == 0 {
-            cell.optionView.backgroundColor = .clear
-            cell.optionView.borderWidth = 0.0
-            cell.eyeIcon.image = UIImage(named: "Frame 4")
-            cell.title.textColor = UIColor(named: "#1D1F20")
-            cell.title.font = UIFont(name: "OpenSans-Medium", size: 14.0)
-            cell.iconWidth.constant = 0
-            cell.iconSpacing.constant = 0
-        }
-        
-        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        if indexPath.row == 0 { return }
-        
-        let option = customOptions[indexPath.item]
-        if selectedCustomOptions.contains(option) {
-            if let index = selectedCustomOptions.firstIndex(of: option) {
-                selectedCustomOptions.remove(at: index)
+        if collectionView == dashboardOptionsCollectionView {
+            
+            let details = dashboardMenus[indexPath.row]
+            switch details["title"] ?? "" {
+            case "Total Contacts":
+                selectedOptions = "All Contacts"
+                SharedMethods.shared.pushToWithoutData(destVC: AllContactsVC.self, storyboard: .main, isAnimated: false)
+                
+            case "Duplicates Found":
+                selectedOptions = "Clean Up"
+                let sb = AppStoryboards.main.storyboardInstance
+                let destVC = sb.instantiateViewController(withIdentifier: "CleanUpContactsVC") as! CleanUpContactsVC
+                destVC.isActiveDuplicateContacts = true
+                SharedMethods.shared.pushTo(destVC: destVC, isAnimated: false)
+                
+            case "Lost Touch":
+                selectedOptions = "Lost Touch"
+                SharedMethods.shared.pushToWithoutData(destVC: LostTouchVC.self, storyboard: .main, isAnimated: false)
+                
+            case "Connected Sources":
+                selectedOptions = "Import & Sync"
+                SharedMethods.shared.pushToWithoutData(destVC: ImportSyncVC.self, storyboard: .main, isAnimated: false)
+                
+            default: break
             }
+            
         } else {
-            selectedCustomOptions.append(option)
+            
+            if indexPath.row == 0 { return }
+            
+            let option = customOptions[indexPath.item]
+            if selectedCustomOptions.contains(option) {
+                if let index = selectedCustomOptions.firstIndex(of: option) {
+                    selectedCustomOptions.remove(at: index)
+                }
+            } else {
+                selectedCustomOptions.append(option)
+            }
+            
+            optionCollectionView.reloadData()
+            
+            if selectedCustomOptions.isEmpty {
+                customizeView.backgroundColor = .clear
+            } else {
+                customizeView.backgroundColor = UIColor(named: "#F1F1F1")
+            }
+            
+            resetView.backgroundColor = .clear
         }
-        
-        optionCollectionView.reloadData()
-        
-        if selectedCustomOptions.isEmpty {
-            customizeView.backgroundColor = .clear
-        } else {
-            customizeView.backgroundColor = UIColor(named: "#F1F1F1")
-        }
-        
-        resetView.backgroundColor = .clear
     }
 }
 

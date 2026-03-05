@@ -4,6 +4,20 @@ import UIKit
 extension String {
     
     //MARK:- VARIOUS METHODS FOR STRING
+    var isEmail: Bool {
+        let regex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+        return checkRegEx(for: self, regEx: regex)
+    }
+    
+    var isPhoneNumber: Bool {
+        let regex = "^[0-9]{10}$"
+        return checkRegEx(for: self, regEx: regex)
+    }
+    
+    private func checkRegEx(for string: String, regEx: String) -> Bool {
+        let test = NSPredicate(format: "SELF MATCHES %@", regEx)
+        return test.evaluate(with: string)
+    }
     
     /// EZSE: Converts String to Int
     public func toInt() -> Int? {
