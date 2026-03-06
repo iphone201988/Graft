@@ -24,7 +24,9 @@ class SideMenuOptionsVC: UIViewController {
                  ["section": "Manage", "options": [["title": "Clean Up", "icon": "Frame-5"],
                                                    ["title": "Activity Timeline", "icon": "Frame-6"],
                                                    ["title": "Lost Touch", "icon": "Frame-7"],
-                                                   ["title": "Invite Lists", "icon": "Frame-8"]] ]
+                                                   ["title": "Invite Lists", "icon": "Frame-8"],
+                                                   ["title": "Delete Account", "icon": "delete"],
+                                                   ["title": "Logout", "icon": "logout"]] ]
     ]
     
     // MARK: Controller Lifecycle
@@ -97,6 +99,12 @@ extension SideMenuOptionsVC: UITableViewDelegate,UITableViewDataSource {
             cell.optionView.backgroundColor = .clear
         }
         
+        if title == "Delete Account" || title == "Logout" {
+            cell.titleLbl.textColor = UIColor(named: "#C91D1D")
+        } else {
+            cell.titleLbl.textColor = UIColor(named: "#1D1F20")
+        }
+        
         return cell
     }
     
@@ -139,6 +147,30 @@ extension SideMenuOptionsVC: UITableViewDelegate,UITableViewDataSource {
             }  else if indexPath.row == 3 {
                 dismiss(animated: false) {
                     SharedMethods.shared.pushToWithoutData(destVC: InviteListVC.self, storyboard: .main, isAnimated: false)
+                }
+            }   else if indexPath.row == 4 {
+                dismiss(animated: false) {
+                    PopupUtil.popupAlert(title: "Graft",
+                                         message: "Are you sure you want to delete your account?",
+                                         actionTitles: ["Delete", "No"],
+                                         actions: [{ _, _ in
+                        selectedOptions = ""
+                        if let vc = AppStoryboards.main.controller(LoginVC.self) {
+                            SharedMethods.shared.navigateToRootVC(rootVC: vc)
+                        }
+                    }])
+                }
+            }   else if indexPath.row == 5 {
+                dismiss(animated: false) {
+                    PopupUtil.popupAlert(title: "Graft",
+                                         message: "Are you sure you want to logout?",
+                                         actionTitles: ["Logout", "No"],
+                                         actions: [{ _, _ in
+                        selectedOptions = ""
+                        if let vc = AppStoryboards.main.controller(LoginVC.self) {
+                            SharedMethods.shared.navigateToRootVC(rootVC: vc)
+                        }
+                    }])
                 }
             }
         }

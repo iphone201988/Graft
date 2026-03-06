@@ -12,7 +12,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let _ = (scene as? UIWindowScene) else { return }
         
         if let vc = AppStoryboards.main.controller(DashboardVC.self) {
-            SharedMethods.shared.navigateToRootVC(rootVC: vc)
+          //  SharedMethods.shared.navigateToRootVC(rootVC: vc)
         }
     }
 

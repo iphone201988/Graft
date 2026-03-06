@@ -20,6 +20,7 @@
 		8B090DAC2F4F1F8D005606AA /* ActivityTimelineVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B090DAB2F4F1F8D005606AA /* ActivityTimelineVC.swift */; };
 		8B090DAF2F4F22CB005606AA /* TimelineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B090DAD2F4F22CB005606AA /* TimelineCell.swift */; };
 		8B090DB02F4F22CB005606AA /* TimelineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B090DAE2F4F22CB005606AA /* TimelineCell.xib */; };
+		8B23AA322F5ACECA00AA366F /* PopupUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B23AA312F5ACECA00AA366F /* PopupUtil.swift */; };
 		8B6674742F4C5EC700FFEF39 /* OpenSansLbl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6674732F4C5EC700FFEF39 /* OpenSansLbl.swift */; };
 		8B6674762F4C5EF200FFEF39 /* LogHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6674752F4C5EF200FFEF39 /* LogHandler.swift */; };
 		8B6674782F4C5F0100FFEF39 /* AppVault.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B6674772F4C5F0100FFEF39 /* AppVault.plist */; };
@@ -70,6 +71,12 @@
 		8BCC4F642F56E4BE00A7008C /* IncompleteNameCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BCC4F632F56E4BE00A7008C /* IncompleteNameCell.xib */; };
 		8BCC4F652F56E4BE00A7008C /* IncompleteNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCC4F622F56E4BE00A7008C /* IncompleteNameCell.swift */; };
 		8BCC4F672F570E7F00A7008C /* CompleteContactInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCC4F662F570E7F00A7008C /* CompleteContactInfoVC.swift */; };
+		8BD0C44E2F5A965F00C9B89D /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0C44D2F5A965F00C9B89D /* LoginVC.swift */; };
+		8BD0C4522F5A97F000C9B89D /* TapGestureExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0C4512F5A97F000C9B89D /* TapGestureExt.swift */; };
+		8BD0C4542F5AB30600C9B89D /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0C4532F5AB30600C9B89D /* SignUpVC.swift */; };
+		8BD0C4562F5ABD4D00C9B89D /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0C4552F5ABD4D00C9B89D /* ForgotPasswordVC.swift */; };
+		8BD0C4582F5ABF0B00C9B89D /* VerificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0C4572F5ABF0B00C9B89D /* VerificationVC.swift */; };
+		8BD0C45A2F5AC1AC00C9B89D /* CreateNewPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0C4592F5AC1AC00C9B89D /* CreateNewPasswordVC.swift */; };
 		8BD1C1272F50020300B7C2CF /* LostTouchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD1C1262F50020300B7C2CF /* LostTouchVC.swift */; };
 		8BD1C12A2F50044000B7C2CF /* LostTouchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BD1C1292F50044000B7C2CF /* LostTouchCell.xib */; };
 		8BD1C12B2F50044000B7C2CF /* LostTouchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD1C1282F50044000B7C2CF /* LostTouchCell.swift */; };
@@ -157,6 +164,7 @@
 		8B090DAB2F4F1F8D005606AA /* ActivityTimelineVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTimelineVC.swift; sourceTree = "<group>"; };
 		8B090DAD2F4F22CB005606AA /* TimelineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineCell.swift; sourceTree = "<group>"; };
 		8B090DAE2F4F22CB005606AA /* TimelineCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimelineCell.xib; sourceTree = "<group>"; };
+		8B23AA312F5ACECA00AA366F /* PopupUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupUtil.swift; sourceTree = "<group>"; };
 		8B6674732F4C5EC700FFEF39 /* OpenSansLbl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSansLbl.swift; sourceTree = "<group>"; };
 		8B6674752F4C5EF200FFEF39 /* LogHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogHandler.swift; sourceTree = "<group>"; };
 		8B6674772F4C5F0100FFEF39 /* AppVault.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = AppVault.plist; sourceTree = "<group>"; };
@@ -208,6 +216,12 @@
 		8BCC4F622F56E4BE00A7008C /* IncompleteNameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncompleteNameCell.swift; sourceTree = "<group>"; };
 		8BCC4F632F56E4BE00A7008C /* IncompleteNameCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IncompleteNameCell.xib; sourceTree = "<group>"; };
 		8BCC4F662F570E7F00A7008C /* CompleteContactInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteContactInfoVC.swift; sourceTree = "<group>"; };
+		8BD0C44D2F5A965F00C9B89D /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		8BD0C4512F5A97F000C9B89D /* TapGestureExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapGestureExt.swift; sourceTree = "<group>"; };
+		8BD0C4532F5AB30600C9B89D /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		8BD0C4552F5ABD4D00C9B89D /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
+		8BD0C4572F5ABF0B00C9B89D /* VerificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationVC.swift; sourceTree = "<group>"; };
+		8BD0C4592F5AC1AC00C9B89D /* CreateNewPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewPasswordVC.swift; sourceTree = "<group>"; };
 		8BD1C1262F50020300B7C2CF /* LostTouchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LostTouchVC.swift; sourceTree = "<group>"; };
 		8BD1C1282F50044000B7C2CF /* LostTouchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LostTouchCell.swift; sourceTree = "<group>"; };
 		8BD1C1292F50044000B7C2CF /* LostTouchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LostTouchCell.xib; sourceTree = "<group>"; };
@@ -305,6 +319,7 @@
 				8B6674812F4C645300FFEF39 /* NotificationCenterName.swift */,
 				8B6674822F4C645300FFEF39 /* StringExtension.swift */,
 				8B6674832F4C645300FFEF39 /* TableViewExt.swift */,
+				8BD0C4512F5A97F000C9B89D /* TapGestureExt.swift */,
 				8B6674842F4C645300FFEF39 /* TextFieldExt.swift */,
 				8B6674852F4C645300FFEF39 /* UIButtonExtension.swift */,
 				8B6674862F4C645300FFEF39 /* UIColorExt.swift */,
@@ -363,6 +378,7 @@
 				8B6674BB2F4CA89E00FFEF39 /* ContactCell.swift */,
 				8B6674B52F4C963100FFEF39 /* ContactTableViewCell.swift */,
 				8BD1C1322F505F7F00B7C2CF /* CreateInviteListVC.swift */,
+				8BD0C4592F5AC1AC00C9B89D /* CreateNewPasswordVC.swift */,
 				8B090D9F2F4EB218005606AA /* CreateTagVC.swift */,
 				8B6674AB2F4C6F7600FFEF39 /* CustomMovieActivityItemSource.swift */,
 				8BAFA4BB2F4D6F2200C85738 /* CustomOptionCell.swift */,
@@ -372,6 +388,7 @@
 				8BD1C12C2F503A8B00B7C2CF /* DayCell.swift */,
 				8BF535C62F5594C200262418 /* DuplicateContactCell.swift */,
 				8B6674A42F4C6EE100FFEF39 /* Enums.swift */,
+				8BD0C4552F5ABD4D00C9B89D /* ForgotPasswordVC.swift */,
 				8BAFA4CE2F4DC8C400C85738 /* GroupCell.swift */,
 				8BAFA4CC2F4DC83100C85738 /* GroupsVC.swift */,
 				8BE0C2162F4C563300817A90 /* HeaderCell.swift */,
@@ -381,6 +398,7 @@
 				8BD1C1302F505C2B00B7C2CF /* InviteListVC.swift */,
 				8B6674A22F4C64AA00FFEF39 /* KeyboardEventListener.swift */,
 				8B6674752F4C5EF200FFEF39 /* LogHandler.swift */,
+				8BD0C44D2F5A965F00C9B89D /* LoginVC.swift */,
 				8BD1C1282F50044000B7C2CF /* LostTouchCell.swift */,
 				8BD1C1262F50020300B7C2CF /* LostTouchVC.swift */,
 				8BF535CA2F559F1200262418 /* MergeContactCell.swift */,
@@ -389,16 +407,19 @@
 				8B08C4632F59540C0048735F /* Models.swift */,
 				8B6674732F4C5EC700FFEF39 /* OpenSansLbl.swift */,
 				8BE0C2122F4C54FA00817A90 /* OptionCell.swift */,
+				8B23AA312F5ACECA00AA366F /* PopupUtil.swift */,
 				8BD1C1382F5068ED00B7C2CF /* Protocols.swift */,
 				8BE0C2032F4C534800817A90 /* SceneDelegate.swift */,
 				8B6674A62F4C6EFD00FFEF39 /* SharedMethods.swift */,
 				8BE0C2102F4C54D400817A90 /* SideMenuOptionDetails.swift */,
+				8BD0C4532F5AB30600C9B89D /* SignUpVC.swift */,
 				8BAFA4BF2F4D9AC600C85738 /* TagCell.swift */,
 				8B090DA12F4EB562005606AA /* TagColorCell.swift */,
 				8B090DAD2F4F22CB005606AA /* TimelineCell.swift */,
 				8B6674A02F4C649600FFEF39 /* Toast.swift */,
 				8B6674B12F4C86DD00FFEF39 /* UserCell.swift */,
 				8B6674792F4C5F0600FFEF39 /* VaultInfo.swift */,
+				8BD0C4572F5ABF0B00C9B89D /* VerificationVC.swift */,
 				8BE0C1FD2F4C534800817A90 /* Assets.xcassets */,
 				8B090DA82F4EE61C005606AA /* ConnectedSourceCell.xib */,
 				8B6674BC2F4CA89E00FFEF39 /* ContactCell.xib */,
@@ -630,13 +651,16 @@
 				8BAFA4D32F4DD55100C85738 /* ConnectYourContactsVC.swift in Sources */,
 				8B6674BD2F4CA89E00FFEF39 /* ContactCell.swift in Sources */,
 				8BE0C2142F4C54FA00817A90 /* OptionCell.swift in Sources */,
+				8BD0C4562F5ABD4D00C9B89D /* ForgotPasswordVC.swift in Sources */,
 				8BE0C2062F4C534800817A90 /* AppDelegate.swift in Sources */,
 				8B090DA32F4EB562005606AA /* TagColorCell.swift in Sources */,
 				8B66748F2F4C645300FFEF39 /* NotificationCenterName.swift in Sources */,
 				8B6674902F4C645300FFEF39 /* UILabelExtensions.swift in Sources */,
 				8BF535D02F55A55300262418 /* MergeContactInfoCell.swift in Sources */,
+				8BD0C4542F5AB30600C9B89D /* SignUpVC.swift in Sources */,
 				8BAFA4D12F4DC8C400C85738 /* GroupCell.swift in Sources */,
 				8B08C4662F59542C0048735F /* Constants.swift in Sources */,
+				8B23AA322F5ACECA00AA366F /* PopupUtil.swift in Sources */,
 				8B6674912F4C645300FFEF39 /* UIButtonExtension.swift in Sources */,
 				8BD1C1392F5068ED00B7C2CF /* Protocols.swift in Sources */,
 				8BAFA4BD2F4D6F2200C85738 /* CustomOptionCell.swift in Sources */,
@@ -644,6 +668,7 @@
 				8B6674932F4C645300FFEF39 /* UIWindowExtension.swift in Sources */,
 				8B6674942F4C645300FFEF39 /* UIImageViewExtension.swift in Sources */,
 				8BCC4F652F56E4BE00A7008C /* IncompleteNameCell.swift in Sources */,
+				8BD0C4522F5A97F000C9B89D /* TapGestureExt.swift in Sources */,
 				8B6674952F4C645300FFEF39 /* UITextViewExtension.swift in Sources */,
 				8BAFA4CD2F4DC83100C85738 /* GroupsVC.swift in Sources */,
 				8B090DA62F4ECB6D005606AA /* ImportSyncVC.swift in Sources */,
@@ -655,6 +680,7 @@
 				8B66749A2F4C645300FFEF39 /* URLExt.swift in Sources */,
 				8B66749B2F4C645300FFEF39 /* UIImageExt.swift in Sources */,
 				8B6674A32F4C64AA00FFEF39 /* KeyboardEventListener.swift in Sources */,
+				8BD0C45A2F5AC1AC00C9B89D /* CreateNewPasswordVC.swift in Sources */,
 				8B090DAC2F4F1F8D005606AA /* ActivityTimelineVC.swift in Sources */,
 				8BCC4F672F570E7F00A7008C /* CompleteContactInfoVC.swift in Sources */,
 				8B6674B82F4C963100FFEF39 /* ContactTableViewCell.swift in Sources */,
@@ -686,12 +712,14 @@
 				8BF535D42F55AF4800262418 /* MergeContactInfo2Cell.swift in Sources */,
 				8B090DAF2F4F22CB005606AA /* TimelineCell.swift in Sources */,
 				8B6674742F4C5EC700FFEF39 /* OpenSansLbl.swift in Sources */,
+				8BD0C4582F5ABF0B00C9B89D /* VerificationVC.swift in Sources */,
 				8BE0C2072F4C534800817A90 /* SceneDelegate.swift in Sources */,
 				8BD1C1332F505F7F00B7C2CF /* CreateInviteListVC.swift in Sources */,
 				8BE0C2082F4C534800817A90 /* DashboardVC.swift in Sources */,
 				8BE0C2192F4C563300817A90 /* HeaderCell.swift in Sources */,
 				8B08C4612F594DE80048735F /* DashboardOptionCell.swift in Sources */,
 				8BAFA4CA2F4DC7C900C85738 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
+				8BD0C44E2F5A965F00C9B89D /* LoginVC.swift in Sources */,
 				8BAFA4CB2F4DC7C900C85738 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				8BE0C2112F4C54D400817A90 /* SideMenuOptionDetails.swift in Sources */,
 			);
