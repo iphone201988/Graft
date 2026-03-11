@@ -68,18 +68,22 @@ class LoginVC: UIViewController {
     }
     
     @IBAction func signIn(_ sender: UIButton) {
-        let email = email.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
-        let password = password.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
-        if !email.isEmpty && !password.isEmpty {
-            if email.isEmail {
-                if let vc = AppStoryboards.main.controller(DashboardVC.self) {
-                    SharedMethods.shared.navigateToRootVC(rootVC: vc)
-                }
-            } else {
-                Toast.show(message: "Please enter valid email")
-            }
-        } else {
-            Toast.show(message: "All fields are required")
+//        let email = email.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+//        let password = password.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+//        if !email.isEmpty && !password.isEmpty {
+//            if email.isEmail {
+//                if let vc = AppStoryboards.main.controller(DashboardVC.self) {
+//                    SharedMethods.shared.navigateToRootVC(rootVC: vc)
+//                }
+//            } else {
+//                Toast.show(message: "Please enter valid email")
+//            }
+//        } else {
+//            Toast.show(message: "All fields are required")
+//        }
+        
+        if let vc = AppStoryboards.main.controller(DashboardVC.self) {
+            SharedMethods.shared.navigateToRootVC(rootVC: vc)
         }
     }
     

@@ -17,12 +17,21 @@ class AddNewContactVC: UIViewController {
     @IBOutlet weak var dobBtn: UIButton!
     @IBOutlet weak var dobTF: OpenSansTF!
     @IBOutlet weak var notes: OpenSansTV!
+    @IBOutlet weak var titleLbl: OpenSansLbl!
+    @IBOutlet weak var createContactBtnTitle: UILabel!
     
     var servicesEvents: ServicesEvents?
+    var interfaceTitle = "Add New Contact"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupDatePicker()
+        titleLbl.text = interfaceTitle
+        if interfaceTitle == "Add New Contact" {
+            createContactBtnTitle.text = "Create Contact"
+        } else {
+            createContactBtnTitle.text = "Update Contact"
+        }
     }
     
     @IBAction func closeForm(_ sender: UIButton) {

@@ -96,7 +96,7 @@ class DashboardVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let layout = LeftAlignedFlowLayout()
-        layout.scrollDirection = .vertical
+        layout.scrollDirection = .horizontal
         layout.minimumInteritemSpacing = 8
         layout.minimumLineSpacing = 8
         layout.sectionInset = .zero
@@ -158,6 +158,14 @@ class DashboardVC: UIViewController {
         let sb = AppStoryboards.main.storyboardInstance
         let destVC = sb.instantiateViewController(withIdentifier: "AllContactsVC") as! AllContactsVC
         destVC.viewAllFavorites = true
+        SharedMethods.shared.pushTo(destVC: destVC, isAnimated: false)
+    }
+    
+    @IBAction func reviewNow(_ sender: UIButton) {
+        selectedOptions = "Clean Up"
+        let sb = AppStoryboards.main.storyboardInstance
+        let destVC = sb.instantiateViewController(withIdentifier: "CleanUpContactsVC") as! CleanUpContactsVC
+        destVC.isActiveDuplicateContacts = true
         SharedMethods.shared.pushTo(destVC: destVC, isAnimated: false)
     }
 }
@@ -268,8 +276,16 @@ extension DashboardVC: UITableViewDelegate,UITableViewDataSource {
         if tableView == recTableView {
             
         } else if tableView == favTableView {
+            let sb = AppStoryboards.main.storyboardInstance
+            let destVC = sb.instantiateViewController(withIdentifier: "ContactDetailsVC") as! ContactDetailsVC
+            destVC.isViaLostTouch = true
+            SharedMethods.shared.pushTo(destVC: destVC)
             
         } else if tableView == birthdayTableView {
+            let sb = AppStoryboards.main.storyboardInstance
+            let destVC = sb.instantiateViewController(withIdentifier: "ContactDetailsVC") as! ContactDetailsVC
+            destVC.isViaLostTouch = true
+            SharedMethods.shared.pushTo(destVC: destVC)
             
         } else {
             let details = dashboardMenus[indexPath.row]

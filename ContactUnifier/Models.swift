@@ -37,3 +37,11 @@ struct NewContactInfo {
     var note: String?
     var initials: String?
 }
+
+struct NewInteraction {
+    var type: String?
+    var subject: String?
+    var note: String?
+    var createdAt: String?
+    var icon: String?
+}

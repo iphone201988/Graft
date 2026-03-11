@@ -238,7 +238,30 @@ extension AllContactsVC: UITableViewDelegate,UITableViewDataSource {
         cell.emailLbl.text = details.email ?? ""
         cell.phoneLbl.text = details.phoneNumber ?? ""
         
+        cell.moreBtn.tag = indexPath.row
+        cell.moreBtn.addTarget(self, action: #selector(moreOptions(_ :)), for: .touchUpInside)
+        
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        SharedMethods.shared.pushToWithoutData(destVC: ContactDetailsVC.self, storyboard: .main, isAnimated: false)
+    }
+    
+    @objc fileprivate func moreOptions(_ sender: UIButton) {
+        let edit = UIAction(
+            title: "Archive",
+            image: UIImage(systemName: "archivebox")
+        ) { _ in }
+
+        let delete = UIAction(
+            title: "Delete",
+            image: UIImage(systemName: "trash"),
+            attributes: .destructive
+        ) { _ in }
+
+        sender.menu = UIMenu(children: [edit, delete])
+        sender.showsMenuAsPrimaryAction = true
     }
 }
 

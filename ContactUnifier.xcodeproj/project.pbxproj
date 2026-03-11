@@ -140,6 +140,12 @@
 		8BE0C3DE2F4C5CCD00817A90 /* OpenSans-Italic-VariableFont_wdth,wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8BE0C3B52F4C5CCD00817A90 /* OpenSans-Italic-VariableFont_wdth,wght.ttf */; };
 		8BE0C3DF2F4C5CCD00817A90 /* OpenSans-VariableFont_wdth,wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8BE0C3B62F4C5CCD00817A90 /* OpenSans-VariableFont_wdth,wght.ttf */; };
 		8BE0C3E02F4C5CCD00817A90 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8BE0C3B72F4C5CCD00817A90 /* README.txt */; };
+		8BF1F8AA2F612B0D00CE4CA5 /* ContactDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF1F8A92F612B0D00CE4CA5 /* ContactDetailsVC.swift */; };
+		8BF1F8AC2F6150E900CE4CA5 /* CreateLogInteractionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF1F8AB2F6150E900CE4CA5 /* CreateLogInteractionVC.swift */; };
+		8BF1F8AF2F616EB600CE4CA5 /* InteractionHistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BF1F8AE2F616EB600CE4CA5 /* InteractionHistoryCell.xib */; };
+		8BF1F8B02F616EB600CE4CA5 /* InteractionHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF1F8AD2F616EB600CE4CA5 /* InteractionHistoryCell.swift */; };
+		8BF1F8B72F619CB500CE4CA5 /* AddedTagCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BF1F8B62F619CB500CE4CA5 /* AddedTagCell.xib */; };
+		8BF1F8B82F619CB500CE4CA5 /* AddedTagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF1F8B52F619CB500CE4CA5 /* AddedTagCell.swift */; };
 		8BF535C82F5594C200262418 /* DuplicateContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF535C62F5594C200262418 /* DuplicateContactCell.swift */; };
 		8BF535C92F5594C200262418 /* DuplicateContactCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BF535C72F5594C200262418 /* DuplicateContactCell.xib */; };
 		8BF535CC2F559F1200262418 /* MergeContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF535CA2F559F1200262418 /* MergeContactCell.swift */; };
@@ -286,6 +292,12 @@
 		8BE0C3B52F4C5CCD00817A90 /* OpenSans-Italic-VariableFont_wdth,wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Italic-VariableFont_wdth,wght.ttf"; sourceTree = "<group>"; };
 		8BE0C3B62F4C5CCD00817A90 /* OpenSans-VariableFont_wdth,wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-VariableFont_wdth,wght.ttf"; sourceTree = "<group>"; };
 		8BE0C3B72F4C5CCD00817A90 /* README.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		8BF1F8A92F612B0D00CE4CA5 /* ContactDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailsVC.swift; sourceTree = "<group>"; };
+		8BF1F8AB2F6150E900CE4CA5 /* CreateLogInteractionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateLogInteractionVC.swift; sourceTree = "<group>"; };
+		8BF1F8AD2F616EB600CE4CA5 /* InteractionHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractionHistoryCell.swift; sourceTree = "<group>"; };
+		8BF1F8AE2F616EB600CE4CA5 /* InteractionHistoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InteractionHistoryCell.xib; sourceTree = "<group>"; };
+		8BF1F8B52F619CB500CE4CA5 /* AddedTagCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddedTagCell.swift; sourceTree = "<group>"; };
+		8BF1F8B62F619CB500CE4CA5 /* AddedTagCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddedTagCell.xib; sourceTree = "<group>"; };
 		8BF535C62F5594C200262418 /* DuplicateContactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuplicateContactCell.swift; sourceTree = "<group>"; };
 		8BF535C72F5594C200262418 /* DuplicateContactCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DuplicateContactCell.xib; sourceTree = "<group>"; };
 		8BF535CA2F559F1200262418 /* MergeContactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MergeContactCell.swift; sourceTree = "<group>"; };
@@ -367,6 +379,7 @@
 				8B6674772F4C5F0100FFEF39 /* AppVault.plist */,
 				8BE0C1FE2F4C534800817A90 /* Info.plist */,
 				8B090DAB2F4F1F8D005606AA /* ActivityTimelineVC.swift */,
+				8BF1F8B52F619CB500CE4CA5 /* AddedTagCell.swift */,
 				8BAFA4C32F4DBD0400C85738 /* AddNewContactVC.swift */,
 				8B6674B92F4CA4CF00FFEF39 /* AllContactsVC.swift */,
 				8BE0C1FC2F4C534800817A90 /* AppDelegate.swift */,
@@ -376,8 +389,10 @@
 				8BAFA4D22F4DD55100C85738 /* ConnectYourContactsVC.swift */,
 				8B08C4652F5954280048735F /* Constants.swift */,
 				8B6674BB2F4CA89E00FFEF39 /* ContactCell.swift */,
+				8BF1F8A92F612B0D00CE4CA5 /* ContactDetailsVC.swift */,
 				8B6674B52F4C963100FFEF39 /* ContactTableViewCell.swift */,
 				8BD1C1322F505F7F00B7C2CF /* CreateInviteListVC.swift */,
+				8BF1F8AB2F6150E900CE4CA5 /* CreateLogInteractionVC.swift */,
 				8BD0C4592F5AC1AC00C9B89D /* CreateNewPasswordVC.swift */,
 				8B090D9F2F4EB218005606AA /* CreateTagVC.swift */,
 				8B6674AB2F4C6F7600FFEF39 /* CustomMovieActivityItemSource.swift */,
@@ -394,6 +409,7 @@
 				8BE0C2162F4C563300817A90 /* HeaderCell.swift */,
 				8B090DA52F4ECB6D005606AA /* ImportSyncVC.swift */,
 				8BCC4F622F56E4BE00A7008C /* IncompleteNameCell.swift */,
+				8BF1F8AD2F616EB600CE4CA5 /* InteractionHistoryCell.swift */,
 				8BD1C1342F50677A00B7C2CF /* InviteCell.swift */,
 				8BD1C1302F505C2B00B7C2CF /* InviteListVC.swift */,
 				8B6674A22F4C64AA00FFEF39 /* KeyboardEventListener.swift */,
@@ -421,6 +437,7 @@
 				8B6674792F4C5F0600FFEF39 /* VaultInfo.swift */,
 				8BD0C4572F5ABF0B00C9B89D /* VerificationVC.swift */,
 				8BE0C1FD2F4C534800817A90 /* Assets.xcassets */,
+				8BF1F8B62F619CB500CE4CA5 /* AddedTagCell.xib */,
 				8B090DA82F4EE61C005606AA /* ConnectedSourceCell.xib */,
 				8B6674BC2F4CA89E00FFEF39 /* ContactCell.xib */,
 				8B6674B62F4C963100FFEF39 /* ContactTableViewCell.xib */,
@@ -432,6 +449,7 @@
 				8BAFA4CF2F4DC8C400C85738 /* GroupCell.xib */,
 				8BE0C2172F4C563300817A90 /* HeaderCell.xib */,
 				8BCC4F632F56E4BE00A7008C /* IncompleteNameCell.xib */,
+				8BF1F8AE2F616EB600CE4CA5 /* InteractionHistoryCell.xib */,
 				8BD1C1352F50677A00B7C2CF /* InviteCell.xib */,
 				8BD1C1292F50044000B7C2CF /* LostTouchCell.xib */,
 				8BF535CB2F559F1200262418 /* MergeContactCell.xib */,
@@ -576,6 +594,7 @@
 				8BE0C2182F4C563300817A90 /* HeaderCell.xib in Resources */,
 				8BE0C2152F4C54FA00817A90 /* OptionCell.xib in Resources */,
 				8BE0C2092F4C534800817A90 /* Assets.xcassets in Resources */,
+				8BF1F8AF2F616EB600CE4CA5 /* InteractionHistoryCell.xib in Resources */,
 				8B08C4622F594DE80048735F /* DashboardOptionCell.xib in Resources */,
 				8BE0C20B2F4C534800817A90 /* LaunchScreen.storyboard in Resources */,
 				8BAFA4C22F4D9AC600C85738 /* TagCell.xib in Resources */,
@@ -594,6 +613,7 @@
 				8BAFA4D02F4DC8C400C85738 /* GroupCell.xib in Resources */,
 				8BE0C3C42F4C5CCD00817A90 /* OpenSans_Condensed-SemiBoldItalic.ttf in Resources */,
 				8BE0C3C52F4C5CCD00817A90 /* OpenSans_SemiCondensed-Bold.ttf in Resources */,
+				8BF1F8B72F619CB500CE4CA5 /* AddedTagCell.xib in Resources */,
 				8BE0C3C62F4C5CCD00817A90 /* OpenSans_SemiCondensed-BoldItalic.ttf in Resources */,
 				8BE0C3C72F4C5CCD00817A90 /* OpenSans_SemiCondensed-ExtraBold.ttf in Resources */,
 				8BE0C3C82F4C5CCD00817A90 /* OpenSans_SemiCondensed-ExtraBoldItalic.ttf in Resources */,
@@ -675,6 +695,7 @@
 				8BF535CC2F559F1200262418 /* MergeContactCell.swift in Sources */,
 				8B6674962F4C645300FFEF39 /* DispatchQueue.swift in Sources */,
 				8B6674972F4C645300FFEF39 /* UIColorExt.swift in Sources */,
+				8BF1F8B02F616EB600CE4CA5 /* InteractionHistoryCell.swift in Sources */,
 				8B6674982F4C645300FFEF39 /* DoubleExt.swift in Sources */,
 				8B6674992F4C645300FFEF39 /* CollectionViewExt.swift in Sources */,
 				8B66749A2F4C645300FFEF39 /* URLExt.swift in Sources */,
@@ -689,8 +710,10 @@
 				8BD1C1272F50020300B7C2CF /* LostTouchVC.swift in Sources */,
 				8B08C4642F59540C0048735F /* Models.swift in Sources */,
 				8BAFA4C42F4DBD0400C85738 /* AddNewContactVC.swift in Sources */,
+				8BF1F8AC2F6150E900CE4CA5 /* CreateLogInteractionVC.swift in Sources */,
 				8B6674A52F4C6EE100FFEF39 /* Enums.swift in Sources */,
 				8BF535C82F5594C200262418 /* DuplicateContactCell.swift in Sources */,
+				8BF1F8B82F619CB500CE4CA5 /* AddedTagCell.swift in Sources */,
 				8BD1C1312F505C2B00B7C2CF /* InviteListVC.swift in Sources */,
 				8B6674A12F4C649600FFEF39 /* Toast.swift in Sources */,
 				8BAFA4C12F4D9AC600C85738 /* TagCell.swift in Sources */,
@@ -715,6 +738,7 @@
 				8BD0C4582F5ABF0B00C9B89D /* VerificationVC.swift in Sources */,
 				8BE0C2072F4C534800817A90 /* SceneDelegate.swift in Sources */,
 				8BD1C1332F505F7F00B7C2CF /* CreateInviteListVC.swift in Sources */,
+				8BF1F8AA2F612B0D00CE4CA5 /* ContactDetailsVC.swift in Sources */,
 				8BE0C2082F4C534800817A90 /* DashboardVC.swift in Sources */,
 				8BE0C2192F4C563300817A90 /* HeaderCell.swift in Sources */,
 				8B08C4612F594DE80048735F /* DashboardOptionCell.swift in Sources */,
