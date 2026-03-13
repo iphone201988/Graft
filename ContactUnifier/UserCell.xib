@@ -180,6 +180,7 @@
                 <outlet property="dayView" destination="u93-J7-PFn" id="Fsc-1C-dQn"/>
                 <outlet property="initalLbl" destination="hfm-pA-z4H" id="opt-Lb-t5E"/>
                 <outlet property="initialView" destination="RDE-Qm-R4N" id="c5g-Rf-5w2"/>
+                <outlet property="leftDaysLbl" destination="J11-JX-Nlb" id="VoF-30-ZQU"/>
                 <outlet property="msgLbl" destination="Ji5-pi-K3x" id="Ja0-9M-vha"/>
                 <outlet property="nameLbl" destination="eHR-yv-cbL" id="qN5-iY-5nX"/>
                 <outlet property="starIcon" destination="IAc-hK-b0y" id="UsO-uO-D59"/>
@@ -201,7 +202,7 @@
             <color red="0.30196078431372547" green="0.32156862745098042" blue="0.33725490196078434" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="#DFE2E4">
-            <color red="0.87450980392156863" green="0.88627450980392153" blue="0.89411764705882357" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.87450980392156863" green="0.88627450980392153" blue="0.89411764705882357" alpha="0.89999997615814209" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

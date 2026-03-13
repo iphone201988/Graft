@@ -211,4 +211,30 @@ class SharedMethods {
         let phonePred = NSPredicate(format: "SELF MATCHES %@", phoneRegex)
         return phonePred.evaluate(with: phone)
     }
+    
+    func formatDOB(_ dateString: String?) -> String {
+        guard let dateString = dateString else { return "" }
+        let inputFormatter = DateFormatter()
+        inputFormatter.dateFormat = "yyyy-MM-dd"
+        let outputFormatter = DateFormatter()
+        outputFormatter.dateFormat = "dd/MM/yyyy"
+        if let date = inputFormatter.date(from: dateString) {
+            return outputFormatter.string(from: date)
+        }
+        
+        return ""
+    }
+    
+    func formatBirthday(_ dateString: String?) -> String {
+        guard let dateString = dateString else { return "" }
+        let inputFormatter = DateFormatter()
+        inputFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSSSS'Z'"
+        inputFormatter.locale = Locale(identifier: "en_US_POSIX")
+        let outputFormatter = DateFormatter()
+        outputFormatter.dateFormat = "MMMM dd"
+        if let date = inputFormatter.date(from: dateString) {
+            return outputFormatter.string(from: date)
+        }
+        return ""
+    }
 }

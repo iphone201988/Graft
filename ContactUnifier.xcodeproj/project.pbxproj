@@ -148,6 +148,10 @@
 		8BEB3C7F2F640B9400E77E5D /* Keyname.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEB3C7B2F640B9400E77E5D /* Keyname.swift */; };
 		8BEB3C812F64224900E77E5D /* ContactModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEB3C802F64224900E77E5D /* ContactModel.swift */; };
 		8BEB3C832F64297B00E77E5D /* TagsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEB3C822F64297B00E77E5D /* TagsResponse.swift */; };
+		8BEB3C862F6447D900E77E5D /* TagPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEB3C852F6447D900E77E5D /* TagPopupView.swift */; };
+		8BEB3C882F644EFF00E77E5D /* DashboardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEB3C872F644EFF00E77E5D /* DashboardModel.swift */; };
+		8BEB3C8A2F644F7C00E77E5D /* DynamicHeightCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEB3C892F644F7C00E77E5D /* DynamicHeightCollectionView.swift */; };
+		8BEB3C8C2F644FA700E77E5D /* LeftAlignedFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEB3C8B2F644FA700E77E5D /* LeftAlignedFlowLayout.swift */; };
 		8BF1F8AA2F612B0D00CE4CA5 /* ContactDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF1F8A92F612B0D00CE4CA5 /* ContactDetailsVC.swift */; };
 		8BF1F8AC2F6150E900CE4CA5 /* CreateLogInteractionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF1F8AB2F6150E900CE4CA5 /* CreateLogInteractionVC.swift */; };
 		8BF1F8AF2F616EB600CE4CA5 /* InteractionHistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BF1F8AE2F616EB600CE4CA5 /* InteractionHistoryCell.xib */; };
@@ -308,7 +312,10 @@
 		8BEB3C7B2F640B9400E77E5D /* Keyname.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyname.swift; sourceTree = "<group>"; };
 		8BEB3C802F64224900E77E5D /* ContactModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactModel.swift; sourceTree = "<group>"; };
 		8BEB3C822F64297B00E77E5D /* TagsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsResponse.swift; sourceTree = "<group>"; };
-		8BEB3C842F642F1A00E77E5D /* NewContactInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewContactInfo.swift; sourceTree = "<group>"; };
+		8BEB3C852F6447D900E77E5D /* TagPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagPopupView.swift; sourceTree = "<group>"; };
+		8BEB3C872F644EFF00E77E5D /* DashboardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardModel.swift; sourceTree = "<group>"; };
+		8BEB3C892F644F7C00E77E5D /* DynamicHeightCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicHeightCollectionView.swift; sourceTree = "<group>"; };
+		8BEB3C8B2F644FA700E77E5D /* LeftAlignedFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftAlignedFlowLayout.swift; sourceTree = "<group>"; };
 		8BF1F8A92F612B0D00CE4CA5 /* ContactDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailsVC.swift; sourceTree = "<group>"; };
 		8BF1F8AB2F6150E900CE4CA5 /* CreateLogInteractionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateLogInteractionVC.swift; sourceTree = "<group>"; };
 		8BF1F8AD2F616EB600CE4CA5 /* InteractionHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractionHistoryCell.swift; sourceTree = "<group>"; };
@@ -379,7 +386,6 @@
 			children = (
 				8BE0C2052F4C534800817A90 /* ContactUnifier */,
 				8BE0C1E52F4C533900817A90 /* Products */,
-				8BEB3C842F642F1A00E77E5D /* NewContactInfo.swift */,
 			);
 			sourceTree = "<group>";
 		};
@@ -417,10 +423,12 @@
 				8B6674AB2F4C6F7600FFEF39 /* CustomMovieActivityItemSource.swift */,
 				8BAFA4BB2F4D6F2200C85738 /* CustomOptionCell.swift */,
 				8B6674AD2F4C7D8300FFEF39 /* DashboardCell.swift */,
+				8BEB3C872F644EFF00E77E5D /* DashboardModel.swift */,
 				8B08C45F2F594DE80048735F /* DashboardOptionCell.swift */,
 				8BE0C2042F4C534800817A90 /* DashboardVC.swift */,
 				8BD1C12C2F503A8B00B7C2CF /* DayCell.swift */,
 				8BF535C62F5594C200262418 /* DuplicateContactCell.swift */,
+				8BEB3C892F644F7C00E77E5D /* DynamicHeightCollectionView.swift */,
 				8B6674A42F4C6EE100FFEF39 /* Enums.swift */,
 				8BD0C4552F5ABD4D00C9B89D /* ForgotPasswordVC.swift */,
 				8BAFA4CE2F4DC8C400C85738 /* GroupCell.swift */,
@@ -432,6 +440,7 @@
 				8BD1C1342F50677A00B7C2CF /* InviteCell.swift */,
 				8BD1C1302F505C2B00B7C2CF /* InviteListVC.swift */,
 				8B6674A22F4C64AA00FFEF39 /* KeyboardEventListener.swift */,
+				8BEB3C8B2F644FA700E77E5D /* LeftAlignedFlowLayout.swift */,
 				8B6674752F4C5EF200FFEF39 /* LogHandler.swift */,
 				8BD0C44D2F5A965F00C9B89D /* LoginVC.swift */,
 				8BD1C1282F50044000B7C2CF /* LostTouchCell.swift */,
@@ -450,6 +459,7 @@
 				8BD0C4532F5AB30600C9B89D /* SignUpVC.swift */,
 				8BAFA4BF2F4D9AC600C85738 /* TagCell.swift */,
 				8B090DA12F4EB562005606AA /* TagColorCell.swift */,
+				8BEB3C852F6447D900E77E5D /* TagPopupView.swift */,
 				8BEB3C822F64297B00E77E5D /* TagsResponse.swift */,
 				8B090DAD2F4F22CB005606AA /* TimelineCell.swift */,
 				8B6674A02F4C649600FFEF39 /* Toast.swift */,
@@ -711,6 +721,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8BAFA4D32F4DD55100C85738 /* ConnectYourContactsVC.swift in Sources */,
+				8BEB3C862F6447D900E77E5D /* TagPopupView.swift in Sources */,
 				8B6674BD2F4CA89E00FFEF39 /* ContactCell.swift in Sources */,
 				8BE0C2142F4C54FA00817A90 /* OptionCell.swift in Sources */,
 				8BD0C4562F5ABD4D00C9B89D /* ForgotPasswordVC.swift in Sources */,
@@ -721,6 +732,7 @@
 				8B6674902F4C645300FFEF39 /* UILabelExtensions.swift in Sources */,
 				8BF535D02F55A55300262418 /* MergeContactInfoCell.swift in Sources */,
 				8BD0C4542F5AB30600C9B89D /* SignUpVC.swift in Sources */,
+				8BEB3C882F644EFF00E77E5D /* DashboardModel.swift in Sources */,
 				8BAFA4D12F4DC8C400C85738 /* GroupCell.swift in Sources */,
 				8B08C4662F59542C0048735F /* Constants.swift in Sources */,
 				8B23AA322F5ACECA00AA366F /* PopupUtil.swift in Sources */,
@@ -729,6 +741,7 @@
 				8BAFA4BD2F4D6F2200C85738 /* CustomOptionCell.swift in Sources */,
 				8B6674922F4C645300FFEF39 /* TableViewExt.swift in Sources */,
 				8B6674932F4C645300FFEF39 /* UIWindowExtension.swift in Sources */,
+				8BEB3C8C2F644FA700E77E5D /* LeftAlignedFlowLayout.swift in Sources */,
 				8B6674942F4C645300FFEF39 /* UIImageViewExtension.swift in Sources */,
 				8BCC4F652F56E4BE00A7008C /* IncompleteNameCell.swift in Sources */,
 				8BD0C4522F5A97F000C9B89D /* TapGestureExt.swift in Sources */,
@@ -758,6 +771,7 @@
 				8BF535C82F5594C200262418 /* DuplicateContactCell.swift in Sources */,
 				8BF1F8B82F619CB500CE4CA5 /* AddedTagCell.swift in Sources */,
 				8BEB3C782F640B6600E77E5D /* UserModel.swift in Sources */,
+				8BEB3C8A2F644F7C00E77E5D /* DynamicHeightCollectionView.swift in Sources */,
 				8BD1C1312F505C2B00B7C2CF /* InviteListVC.swift in Sources */,
 				8B6674A12F4C649600FFEF39 /* Toast.swift in Sources */,
 				8BAFA4C12F4D9AC600C85738 /* TagCell.swift in Sources */,

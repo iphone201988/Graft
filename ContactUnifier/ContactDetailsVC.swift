@@ -3,6 +3,15 @@ import SideMenu
 
 class ContactDetailsVC: UIViewController {
     
+    @IBOutlet weak var initialLbl: OpenSansLbl!
+    @IBOutlet weak var name: OpenSansLbl!
+    @IBOutlet weak var titleLbl: OpenSansLbl!
+    @IBOutlet weak var company: OpenSansLbl!
+    @IBOutlet weak var email: OpenSansLbl!
+    @IBOutlet weak var phoneLbl: OpenSansLbl!
+    @IBOutlet weak var addressLbl: OpenSansLbl!
+    @IBOutlet weak var sourceLbl: OpenSansLbl!
+    
     @IBOutlet weak var tbl: UITableView! {
         didSet {
             tbl.registerCellFromNib(cellID: InteractionHistoryCell.identifier)
@@ -32,7 +41,10 @@ class ContactDetailsVC: UIViewController {
     
     var interactionLogs = [NewAddingInfo]()
     var tags = ["tech", "networking", "executive", "investor"]
-    var isViaLostTouch: Bool = false
+    var isShowInfo: Bool = false
+    var contactDetails: ContactData?
+    var contactID = ""
+    var servicesEvents: ServicesEvents?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,8 +52,8 @@ class ContactDetailsVC: UIViewController {
         
         emptyView.isHidden = false
         tbl.isHidden = true
-
-        if isViaLostTouch {
+        
+        if isShowInfo {
             quickActionsTopView.isHidden = false
             quickActionsView.isHidden = false
             
@@ -53,6 +65,10 @@ class ContactDetailsVC: UIViewController {
             
             emptyMsg.isHidden = false
             contactInfoView.isHidden = true
+        }
+        
+        Task {
+            await getContact()
         }
     }
     
@@ -83,11 +99,18 @@ class ContactDetailsVC: UIViewController {
         else { return }
         destVC.servicesEvents = self
         destVC.interfaceTitle = "Edit Contact"
+        destVC.contactDetails = contactDetails
         SharedMethods.shared.presentVC(destVC: destVC)
     }
     
     @IBAction func deleteContact(_ sender: UIButton) {
-        
+        PopupUtil.popupAlert(title: "Graft",
+                             message: "Are you sure you want to delete this contact?",
+                             actionTitles: ["Yes", "No"],
+                             actions: [{ _, _ in
+            self.servicesEvents?.deleteContact(id: self.contactID)
+            self.navigationController?.popViewController(animated: true)
+        }])
     }
     
     @IBAction func createLogInteraction(_ sender: UIButton) {
@@ -133,7 +156,30 @@ extension ContactDetailsVC: UITableViewDelegate,UITableViewDataSource {
 }
 
 extension ContactDetailsVC: ServicesEvents {
-    func createdContact(info: NewAddingInfo) { }
+    func createdContact(info: NewAddingInfo) {
+        let params: [String: Any] = [
+            "first_name": info.firstName ?? "",
+            "last_name": info.lastName ?? "",
+            "company": info.company ?? "",
+            "job_title": info.jobTitle ?? "",
+            "phone": info.phoneNumber ?? "",
+            "email": info.email ?? "",
+            "birthday": info.birthday ?? "",
+            "address": [
+                "street": info.street ?? "",
+                "city": info.city ?? "",
+                "state": info.state ?? "",
+                "zip_code": info.zip ?? "",
+                "country": info.country ?? ""
+            ],
+            "social_url": info.socialURL ?? "",
+            "note": info.note ?? ""
+        ]
+        
+        Task {
+            await editContact(params, id: info.existingContactID ?? "")
+        }
+    }
     
     func createdLogInteraction(info: NewAddingInfo) {
         activityLbl.text = "Last contacted less than a minute ago"
@@ -170,7 +216,7 @@ extension ContactDetailsVC: UICollectionViewDataSource,
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         .zero
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         .zero
     }
@@ -180,5 +226,65 @@ extension ContactDetailsVC: UICollectionViewDataSource,
         let tag = tags[indexPath.row]
         cell.tagLbl.text = tag
         return cell
+    }
+}
+
+extension ContactDetailsVC {
+    
+    fileprivate func getContact() async {
+        let res = await RemoteRequestManager.shared.dataTask(endpoint: .contacts,
+                                                             tail: contactID,
+                                                             model: ContactModel.self,
+                                                             method: .get,
+                                                             body: .rawJSON)
+        await MainActor.run {
+            switch res {
+            case .failure(let err):
+                Toast.show(message: err.localizedDescription)
+                
+            case .success(let details):
+                if let contact = details.data {
+                    self.contactDetails = contact
+                    self.populateUserInfo()
+                }
+            }
+        }
+    }
+    
+    fileprivate func populateUserInfo() {
+        sourceLbl.text = contactDetails?.source ?? ""
+        initialLbl.text = SharedMethods.shared.getInitials(from: contactDetails?.full_name ?? "")
+        name.text = contactDetails?.full_name ?? ""
+        titleLbl.text = contactDetails?.job_title ?? ""
+        company.text = contactDetails?.company ?? ""
+        email.text = contactDetails?.primary_email ?? ""
+        phoneLbl.text = contactDetails?.primary_phone ?? ""
+        if let address = contactDetails?.addresses?.first {
+            addressLbl.text = "\(address.street ?? ""), \(address.city ?? ""), \(address.state ?? "") \(address.zip_code ?? ""), \(address.country ?? "")"
+        }
+    }
+    
+    fileprivate func editContact(_ params: [String: Any], id: String) async {
+        let res = await RemoteRequestManager.shared.dataTask(endpoint: .contacts,
+                                                             tail: id,
+                                                             model: ContactModel.self,
+                                                             params: params,
+                                                             method: .put,
+                                                             body: .rawJSON)
+        await MainActor.run {
+            switch res {
+            case .failure(let err):
+                Toast.show(message: err.localizedDescription)
+                
+            case .success(let details):
+                Toast.show(message: "Contact updated successfully!") {
+                    if let contact = details.data {
+                        self.contactDetails = contact
+                        self.populateUserInfo()
+                        NotificationCenter.default.post(name: .updatedContact, object: contact)
+                    }
+                }
+            }
+        }
     }
 }

@@ -4,6 +4,7 @@ protocol ServicesEvents {
     func createdContact(info: NewAddingInfo)
     func createdLogInteraction(info: NewAddingInfo)
     func createdTag(info: NewAddingInfo)
+    func deleteContact(id: String)
 }
 
 extension ServicesEvents {
@@ -11,4 +12,5 @@ extension ServicesEvents {
     func createdContact(info: NewAddingInfo) {}
     func createdLogInteraction(info: NewAddingInfo) {}
     func createdTag(info: NewAddingInfo) {}
+    func deleteContact(id: String) {}
 }

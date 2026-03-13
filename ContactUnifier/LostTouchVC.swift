@@ -228,7 +228,7 @@ extension LostTouchVC: UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let sb = AppStoryboards.main.storyboardInstance
         let destVC = sb.instantiateViewController(withIdentifier: "ContactDetailsVC") as! ContactDetailsVC
-        destVC.isViaLostTouch = true
+        destVC.isShowInfo = true
         SharedMethods.shared.pushTo(destVC: destVC)
     }
 }

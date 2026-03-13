@@ -10,6 +10,7 @@ class UserCell: UITableViewCell {
     @IBOutlet weak var initialView: UIView!
     @IBOutlet weak var starIcon: UIImageView!
     @IBOutlet weak var dayView: UIView!
+    @IBOutlet weak var leftDaysLbl: OpenSansLbl!
     
     // MARK: Variables
     class var identifier: String {

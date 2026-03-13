@@ -23,6 +23,7 @@ class AddNewContactVC: UIViewController {
     var servicesEvents: ServicesEvents?
     var interfaceTitle = "Add New Contact"
     var birthdayParam = ""
+    var contactDetails: ContactData?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +34,30 @@ class AddNewContactVC: UIViewController {
         } else {
             createContactBtnTitle.text = "Update Contact"
         }
+        
+        if let _ = contactDetails {
+            populateData()
+        }
+    }
+    
+    fileprivate func populateData() {
+        fn.text = contactDetails?.first_name ?? ""
+        ln.text = contactDetails?.last_name ?? ""
+        email.text = contactDetails?.primary_email ?? ""
+        phone.text = contactDetails?.primary_phone ?? ""
+        company.text = contactDetails?.company ?? ""
+        jobTitle.text = contactDetails?.job_title ?? ""
+        if let address = contactDetails?.addresses?.first {
+            street.text = address.street ?? ""
+            city.text = address.city ?? ""
+            state.text = address.state ?? ""
+            zip.text = address.zip_code ?? ""
+            country.text = address.country ?? ""
+        }
+        
+        dobTF.text = SharedMethods.shared.formatDOB(contactDetails?.birthday)
+        birthdayParam = contactDetails?.birthday ?? ""
+        notes.text = contactDetails?.note ?? ""
     }
     
     @IBAction func closeForm(_ sender: UIButton) {
@@ -62,20 +87,27 @@ class AddNewContactVC: UIViewController {
                     dismiss(animated: true) {
                         let fullname = "\(firstName) \(lastName)"
                         let initials = SharedMethods.shared.getInitials(from: fullname)
+                        var existingContactID: String? = nil
+                        
+                        if let details = self.contactDetails {
+                            existingContactID = "\(details.id ?? 0)"
+                        }
+                        
                         let info = NewAddingInfo(firstName: firstName,
-                                                  lastName: lastName,
-                                                  email: email,
-                                                  phoneNumber: phoneNumber,
-                                                  company: companyName,
-                                                  jobTitle: jobTitle,
-                                                  street: streetAddress,
-                                                  city: city,
-                                                  state: state,
-                                                  zip: zipCode,
-                                                  country: country,
-                                                  birthday: self.birthdayParam,
-                                                  note: notes,
-                                                  initials: initials)
+                                                 lastName: lastName,
+                                                 email: email,
+                                                 phoneNumber: phoneNumber,
+                                                 company: companyName,
+                                                 jobTitle: jobTitle,
+                                                 street: streetAddress,
+                                                 city: city,
+                                                 state: state,
+                                                 zip: zipCode,
+                                                 country: country,
+                                                 birthday: self.birthdayParam,
+                                                 note: notes,
+                                                 initials: initials,
+                                                 existingContactID: existingContactID)
                         self.servicesEvents?.createdContact(info: info)
                     }
                 } else {

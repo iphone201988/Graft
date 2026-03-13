@@ -8,6 +8,7 @@ enum Endpoints: String {
     case contacts = "contacts"
     case tags = "tags"
     case colors = "colors"
+    case dashboard = "dashboard"
 }
 
 enum HttpMehtods: String {

@@ -13,21 +13,7 @@ class GroupsVC: UIViewController {
             tableView.showsHorizontalScrollIndicator = false
         }
     }
-    
-    //    var groups = [
-    //        ["tag": "business", "color": "#EF4444", "subTag": "Business contacts"],
-    //        ["tag": "close friends", "color": "#D946EF", "subTag": "Best Friends"],
-    //        ["tag": "colleague", "color": "#8B5CF6", "subTag": "Work colleagues"],
-    //        ["tag": "consulting", "color": "#F97316", "subTag": "Consulting contacts"],
-    //        ["tag": "designer", "color": "#EC4899", "subTag": "Designers and creatives"],
-    //        ["tag": "finance", "color": "#10B981", "subTag": "Finance contacts"],
-    //        ["tag": "friend", "color": "#3B82F6", "subTag": "Personal friends"],
-    //        ["tag": "investor", "color": "#A855F7", "subTag": "Investors and VCs"],
-    //        ["tag": "networking", "color": "#14B8A6", "subTag": "Networking connections"],
-    //        ["tag": "tech", "color": "#F59E0B", "subTag": "Tech industry"],
-    //        ["tag": "vip", "color": "#0EA5E9", "subTag": "Very important people"],
-    //        ["tag": "wellness", "color": "#84CC16", "subTag": "Health and wellness"]]
-    
+
     var groups = [TagData]()
     fileprivate var tagColors = Set<ColorData>()
     
@@ -133,7 +119,7 @@ extension GroupsVC {
                 Toast.show(message: err.localizedDescription)
                 
             case .success(let details):
-                Toast.show(message: "Contact added successfully.") {
+                Toast.show(message: "Tag added successfully.") {
                     if let tag = details.data {
                         self.groups.insert(tag, at: 0)
                         self.groupCount.text = "\(self.groups.count) tags to organize your contacts"

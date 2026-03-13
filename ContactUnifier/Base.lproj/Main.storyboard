@@ -1410,6 +1410,7 @@
                     </view>
                     <connections>
                         <outlet property="birthdayTableView" destination="zi2-Qi-uIR" id="h0L-UC-bQR"/>
+                        <outlet property="birthdayTblHeight" destination="1R0-dH-mls" id="VvJ-hD-sme"/>
                         <outlet property="customizeBtn" destination="uUv-lW-3CG" id="3jz-zE-pMu"/>
                         <outlet property="customizeView" destination="S0w-qw-1my" id="7xo-qz-4I7"/>
                         <outlet property="dashboardOptionsCollectionView" destination="imA-Sl-V6r" id="uqm-0u-qay"/>
@@ -14370,7 +14371,7 @@ if __name__ == "__main__":
                                 <rect key="frame" x="0.0" y="188" width="393" height="596"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h73-hg-wU0">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="1167.3333333333333"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="1259.3333333333333"/>
                                         <subviews>
                                             <view clipsSubviews="YES" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="mTL-aO-hDM">
                                                 <rect key="frame" x="24" y="0.0" width="58" height="30"/>
@@ -14423,13 +14424,13 @@ if __name__ == "__main__":
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cVu-K3-j13">
-                                                <rect key="frame" x="20" y="65" width="353" height="191"/>
+                                                <rect key="frame" x="20" y="65" width="353" height="283"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rDu-Cg-hom">
-                                                        <rect key="frame" x="20" y="-3" width="313" height="158"/>
+                                                        <rect key="frame" x="20" y="-3" width="313" height="250"/>
                                                         <subviews>
                                                             <view clipsSubviews="YES" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="q70-D7-L13">
-                                                                <rect key="frame" x="0.0" y="54" width="50" height="50"/>
+                                                                <rect key="frame" x="0.0" y="100" width="50" height="50"/>
                                                                 <subviews>
                                                                     <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="users" translatesAutoresizingMaskIntoConstraints="NO" id="0Y8-Yh-7W1">
                                                                         <rect key="frame" x="17" y="17" width="16" height="16"/>
@@ -14440,7 +14441,7 @@ if __name__ == "__main__":
                                                                             <constraint firstAttribute="width" secondItem="0Y8-Yh-7W1" secondAttribute="height" multiplier="1:1" id="vq3-Wr-hrQ"/>
                                                                         </constraints>
                                                                     </imageView>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AB" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ia7-ZT-Z38" customClass="OpenSansLbl" customModule="ContactUnifier" customModuleProvider="target">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ia7-ZT-Z38" customClass="OpenSansLbl" customModule="ContactUnifier" customModuleProvider="target">
                                                                         <rect key="frame" x="5" y="5" width="40" height="40"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -14476,13 +14477,13 @@ if __name__ == "__main__":
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="aUM-PZ-cEs">
-                                                                <rect key="frame" x="60" y="20" width="253" height="118"/>
+                                                                <rect key="frame" x="60" y="20" width="253" height="210"/>
                                                                 <subviews>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="iVn-cL-leu">
-                                                                        <rect key="frame" x="4" y="0.0" width="118" height="24"/>
+                                                                        <rect key="frame" x="4" y="0.0" width="50" height="50"/>
                                                                         <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Abby Barlett" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="htQ-pl-CEp" customClass="OpenSansLbl" customModule="ContactUnifier" customModuleProvider="target">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="118" height="24"/>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="htQ-pl-CEp" customClass="OpenSansLbl" customModule="ContactUnifier" customModuleProvider="target">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                                                 <color key="textColor" name="#1D1F20"/>
                                                                                 <nil key="highlightedColor"/>
@@ -14493,7 +14494,7 @@ if __name__ == "__main__":
                                                                                 </userDefinedRuntimeAttributes>
                                                                             </label>
                                                                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pYw-Mp-J0F">
-                                                                                <rect key="frame" x="0.0" y="1.6666666666666856" width="20" height="21"/>
+                                                                                <rect key="frame" x="0.0" y="14.666666666666686" width="20" height="21"/>
                                                                                 <subviews>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="vcard" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bnq-7c-o7f" customClass="OpenSansLbl" customModule="ContactUnifier" customModuleProvider="target">
                                                                                         <rect key="frame" x="10" y="2" width="0.0" height="17"/>
@@ -14530,14 +14531,14 @@ if __name__ == "__main__":
                                                                         </subviews>
                                                                     </stackView>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="58H-yV-zDy">
-                                                                        <rect key="frame" x="4" y="24" width="240" height="3"/>
+                                                                        <rect key="frame" x="4" y="50" width="240" height="3"/>
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="3" id="dpX-yd-zbd"/>
                                                                         </constraints>
                                                                     </view>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Investment Partner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lTb-bl-uJE" customClass="OpenSansLbl" customModule="ContactUnifier" customModuleProvider="target">
-                                                                        <rect key="frame" x="4.0000000000000071" y="27" width="122.66666666666669" height="17"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lTb-bl-uJE" customClass="OpenSansLbl" customModule="ContactUnifier" customModuleProvider="target">
+                                                                        <rect key="frame" x="4" y="53" width="50" height="50"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                         <color key="textColor" name="#4D5256"/>
                                                                         <color key="highlightedColor" red="0.39309418200000001" green="0.40769639610000002" blue="0.4249529541" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -14548,14 +14549,14 @@ if __name__ == "__main__":
                                                                         </userDefinedRuntimeAttributes>
                                                                     </label>
                                                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tDx-Oh-Fd7">
-                                                                        <rect key="frame" x="4" y="44" width="240" height="3"/>
+                                                                        <rect key="frame" x="4" y="103" width="240" height="3"/>
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="3" id="Rj5-8D-cjg"/>
                                                                         </constraints>
                                                                     </view>
                                                                     <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="4KN-r2-Rqu">
-                                                                        <rect key="frame" x="4" y="44" width="168.66666666666666" height="12"/>
+                                                                        <rect key="frame" x="4" y="103" width="168.66666666666666" height="12"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Z5J-bd-qCN">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="12" height="12"/>
@@ -14575,14 +14576,14 @@ if __name__ == "__main__":
                                                                         </subviews>
                                                                     </stackView>
                                                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SSU-h8-DRZ">
-                                                                        <rect key="frame" x="4" y="44" width="240" height="6"/>
+                                                                        <rect key="frame" x="4" y="103" width="240" height="6"/>
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="6" id="nfK-8y-Xxq"/>
                                                                         </constraints>
                                                                     </view>
                                                                     <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="jWO-9x-UWj">
-                                                                        <rect key="frame" x="4" y="44" width="102" height="18"/>
+                                                                        <rect key="frame" x="4" y="103" width="102" height="18"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="APc-8m-iB1">
                                                                                 <rect key="frame" x="0.0" y="6" width="12" height="12"/>
@@ -14603,17 +14604,17 @@ if __name__ == "__main__":
                                                                         <directionalEdgeInsets key="directionalLayoutMargins" top="6" leading="0.0" bottom="0.0" trailing="0.0"/>
                                                                     </stackView>
                                                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XRs-kp-wcT">
-                                                                        <rect key="frame" x="4" y="44" width="240" height="6"/>
+                                                                        <rect key="frame" x="4" y="103" width="240" height="6"/>
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="6" id="aQG-rd-zEb"/>
                                                                         </constraints>
                                                                     </view>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="O0f-Uc-SEp">
-                                                                        <rect key="frame" x="4" y="44" width="157.66666666666666" height="23"/>
+                                                                        <rect key="frame" x="4" y="103" width="67" height="56"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8Xm-Fo-vUB">
-                                                                                <rect key="frame" x="0.0" y="8.6666666666666856" width="12" height="12"/>
+                                                                                <rect key="frame" x="0.0" y="25" width="12" height="12"/>
                                                                                 <color key="tintColor" red="0.39309418200000001" green="0.40769639610000002" blue="0.4249529541" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="12" id="IFe-TU-4YP"/>
@@ -14621,8 +14622,8 @@ if __name__ == "__main__":
                                                                                 </constraints>
                                                                                 <imageReference key="image" image="Frame-22" symbolScale="small"/>
                                                                             </imageView>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tech Bridge Solutions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ct-Pf-vvE" customClass="OpenSansLbl" customModule="ContactUnifier" customModuleProvider="target">
-                                                                                <rect key="frame" x="17" y="6" width="140.66666666666666" height="17"/>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ct-Pf-vvE" customClass="OpenSansLbl" customModule="ContactUnifier" customModuleProvider="target">
+                                                                                <rect key="frame" x="17" y="6" width="50" height="50"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                                 <color key="textColor" name="#4D5256"/>
                                                                                 <color key="highlightedColor" red="0.39309418200000001" green="0.40769639610000002" blue="0.4249529541" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -14636,14 +14637,14 @@ if __name__ == "__main__":
                                                                         <directionalEdgeInsets key="directionalLayoutMargins" top="6" leading="0.0" bottom="0.0" trailing="0.0"/>
                                                                     </stackView>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oMi-T4-eLy">
-                                                                        <rect key="frame" x="4" y="67" width="240" height="6"/>
+                                                                        <rect key="frame" x="4" y="159" width="240" height="6"/>
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="6" id="blC-57-20C"/>
                                                                         </constraints>
                                                                     </view>
                                                                     <view clipsSubviews="YES" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="TxD-ZQ-TZ4">
-                                                                        <rect key="frame" x="4" y="73" width="16" height="16"/>
+                                                                        <rect key="frame" x="4" y="165" width="16" height="16"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Frame-4 1" translatesAutoresizingMaskIntoConstraints="NO" id="oRY-6I-89A">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="16" height="16"/>
@@ -14675,16 +14676,16 @@ if __name__ == "__main__":
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fAt-Y3-2i7">
-                                                                        <rect key="frame" x="4" y="89" width="240" height="8"/>
+                                                                        <rect key="frame" x="4" y="181" width="240" height="8"/>
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="8" id="ldl-EQ-98P"/>
                                                                         </constraints>
                                                                     </view>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6ad-h2-BDk">
-                                                                        <rect key="frame" x="4" y="97" width="50" height="21"/>
+                                                                        <rect key="frame" x="4" y="189" width="50" height="21"/>
                                                                         <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="vcard" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="geC-6i-reu" customClass="OpenSansLbl" customModule="ContactUnifier" customModuleProvider="target">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="geC-6i-reu" customClass="OpenSansLbl" customModule="ContactUnifier" customModuleProvider="target">
                                                                                 <rect key="frame" x="10" y="2" width="30" height="17"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                                                 <color key="textColor" name="#1D1F20"/>
@@ -14720,7 +14721,7 @@ if __name__ == "__main__":
                                                                 <directionalEdgeInsets key="directionalLayoutMargins" top="0.0" leading="4" bottom="0.0" trailing="0.0"/>
                                                             </stackView>
                                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4Pb-n8-LTB">
-                                                                <rect key="frame" x="122" y="117" width="191" height="21"/>
+                                                                <rect key="frame" x="122" y="209" width="191" height="21"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="21" id="vkJ-QP-teO"/>
@@ -14752,7 +14753,7 @@ if __name__ == "__main__":
                                                         </constraints>
                                                     </view>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="KXU-mX-AXC">
-                                                        <rect key="frame" x="20" y="155" width="80" height="16"/>
+                                                        <rect key="frame" x="20" y="247" width="80" height="16"/>
                                                         <subviews>
                                                             <view clipsSubviews="YES" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="cmR-F8-ety">
                                                                 <rect key="frame" x="0.0" y="0.0" width="16" height="16"/>
@@ -14898,7 +14899,7 @@ if __name__ == "__main__":
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="UNG-DI-Jty">
-                                                <rect key="frame" x="20" y="256" width="353" height="205"/>
+                                                <rect key="frame" x="20" y="348" width="353" height="205"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yh6-o2-4JN">
                                                         <rect key="frame" x="0.0" y="0.0" width="353" height="25"/>
@@ -15344,7 +15345,7 @@ if __name__ == "__main__":
                                                 </subviews>
                                             </stackView>
                                             <view clipsSubviews="YES" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="wmr-GD-24L">
-                                                <rect key="frame" x="20" y="485.99999999999994" width="353" height="227.33333333333331"/>
+                                                <rect key="frame" x="20" y="578" width="353" height="227.33333333333337"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact Info" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dkr-6H-l4q" customClass="OpenSansLbl" customModule="ContactUnifier" customModuleProvider="target">
                                                         <rect key="frame" x="24" y="24" width="305" height="19.333333333333329"/>
@@ -15382,10 +15383,10 @@ if __name__ == "__main__":
                                                                         </constraints>
                                                                     </imageView>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="EEB-p0-nRE">
-                                                                        <rect key="frame" x="42" y="8" width="149.33333333333334" height="34.333333333333336"/>
+                                                                        <rect key="frame" x="42" y="16.333333333333258" width="30.333333333333329" height="17.333333333333329"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sgt-Gc-hKs" customClass="OpenSansLbl" customModule="ContactUnifier" customModuleProvider="target">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="149.33333333333334" height="14.333333333333334"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="30.333333333333332" height="14.333333333333334"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                                 <color key="textColor" name="#4D5256"/>
                                                                                 <nil key="highlightedColor"/>
@@ -15395,8 +15396,8 @@ if __name__ == "__main__":
                                                                                     </userDefinedRuntimeAttribute>
                                                                                 </userDefinedRuntimeAttributes>
                                                                             </label>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="abbybarlett@graft.com" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Njp-g6-FqW" customClass="OpenSansLbl" customModule="ContactUnifier" customModuleProvider="target">
-                                                                                <rect key="frame" x="0.0" y="17.333333333333258" width="149.33333333333334" height="17"/>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Njp-g6-FqW" customClass="OpenSansLbl" customModule="ContactUnifier" customModuleProvider="target">
+                                                                                <rect key="frame" x="0.0" y="17.333333333333371" width="30.333333333333332" height="0.0"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                                 <color key="textColor" name="#1D1F20"/>
                                                                                 <nil key="highlightedColor"/>
@@ -15430,10 +15431,10 @@ if __name__ == "__main__":
                                                                         </constraints>
                                                                     </imageView>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="oRS-2E-G4K">
-                                                                        <rect key="frame" x="42" y="8" width="117" height="34.333333333333336"/>
+                                                                        <rect key="frame" x="42" y="16.333333333333258" width="35.666666666666657" height="17.333333333333329"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZtG-l3-acI" customClass="OpenSansLbl" customModule="ContactUnifier" customModuleProvider="target">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="117" height="14.333333333333334"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="35.666666666666664" height="14.333333333333334"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                                 <color key="textColor" name="#4D5256"/>
                                                                                 <nil key="highlightedColor"/>
@@ -15443,8 +15444,8 @@ if __name__ == "__main__":
                                                                                     </userDefinedRuntimeAttribute>
                                                                                 </userDefinedRuntimeAttributes>
                                                                             </label>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+1(206)555-0578" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8o4-g8-6C9" customClass="OpenSansLbl" customModule="ContactUnifier" customModuleProvider="target">
-                                                                                <rect key="frame" x="0.0" y="17.333333333333258" width="117" height="17"/>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8o4-g8-6C9" customClass="OpenSansLbl" customModule="ContactUnifier" customModuleProvider="target">
+                                                                                <rect key="frame" x="0.0" y="17.333333333333371" width="35.666666666666664" height="0.0"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                                 <color key="textColor" name="#1D1F20"/>
                                                                                 <nil key="highlightedColor"/>
@@ -15478,10 +15479,10 @@ if __name__ == "__main__":
                                                                         </constraints>
                                                                     </imageView>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="Kyr-n9-HGd">
-                                                                        <rect key="frame" x="42" y="8" width="157.66666666666666" height="34.333333333333336"/>
+                                                                        <rect key="frame" x="42" y="16.333333333333258" width="46.333333333333343" height="17.333333333333329"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Gb-7e-9l1" customClass="OpenSansLbl" customModule="ContactUnifier" customModuleProvider="target">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="157.66666666666666" height="14.333333333333334"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="46.333333333333336" height="14.333333333333334"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                                 <color key="textColor" name="#4D5256"/>
                                                                                 <nil key="highlightedColor"/>
@@ -15491,8 +15492,8 @@ if __name__ == "__main__":
                                                                                     </userDefinedRuntimeAttribute>
                                                                                 </userDefinedRuntimeAttributes>
                                                                             </label>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seattle, WA, 98101, USA" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DoJ-uO-7sl" customClass="OpenSansLbl" customModule="ContactUnifier" customModuleProvider="target">
-                                                                                <rect key="frame" x="0.0" y="17.333333333333258" width="157.66666666666666" height="17"/>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DoJ-uO-7sl" customClass="OpenSansLbl" customModule="ContactUnifier" customModuleProvider="target">
+                                                                                <rect key="frame" x="0.0" y="17.333333333333371" width="46.333333333333336" height="0.0"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                                 <color key="textColor" name="#1D1F20"/>
                                                                                 <nil key="highlightedColor"/>
@@ -15558,10 +15559,10 @@ if __name__ == "__main__":
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view clipsSubviews="YES" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="M4j-he-4FY">
-                                                <rect key="frame" x="20" y="738.33333333333337" width="353" height="151.33333333333337"/>
+                                                <rect key="frame" x="20" y="830.33333333333337" width="353" height="151.33333333333337"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="wh7-Gz-Olv">
-                                                        <rect key="frame" x="24" y="24" width="305" height="77.333333333333329"/>
+                                                        <rect key="frame" x="24" y="23.999999999999886" width="305" height="77.333333333333329"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Activity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4xb-Aa-5WL" customClass="OpenSansLbl" customModule="ContactUnifier" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="54" height="19.333333333333332"/>
@@ -15575,14 +15576,14 @@ if __name__ == "__main__":
                                                                 </userDefinedRuntimeAttributes>
                                                             </label>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qe0-Im-NvN">
-                                                                <rect key="frame" x="0.0" y="19.333333333333258" width="305" height="8"/>
+                                                                <rect key="frame" x="0.0" y="19.333333333333485" width="305" height="8"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="8" id="zIP-Y1-qAV"/>
                                                                 </constraints>
                                                             </view>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No interactions recorded" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eiw-s2-EKf" customClass="OpenSansLbl" customModule="ContactUnifier" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="27.333333333333258" width="160.66666666666666" height="17"/>
+                                                                <rect key="frame" x="0.0" y="27.333333333333485" width="160.66666666666666" height="17"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <color key="textColor" name="#4D5256"/>
                                                                 <nil key="highlightedColor"/>
@@ -15593,14 +15594,14 @@ if __name__ == "__main__":
                                                                 </userDefinedRuntimeAttributes>
                                                             </label>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="27M-ba-Jt5">
-                                                                <rect key="frame" x="0.0" y="44.333333333333258" width="305" height="16"/>
+                                                                <rect key="frame" x="0.0" y="44.333333333333485" width="305" height="16"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="16" id="Lo0-XB-IPx"/>
                                                                 </constraints>
                                                             </view>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 interactions" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b1r-ym-aIL" customClass="OpenSansLbl" customModule="ContactUnifier" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="60.333333333333258" width="88.666666666666671" height="17"/>
+                                                                <rect key="frame" x="0.0" y="60.333333333333485" width="88.666666666666671" height="17"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <color key="textColor" name="#4D5256"/>
                                                                 <nil key="highlightedColor"/>
@@ -15614,7 +15615,7 @@ if __name__ == "__main__":
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </stackView>
                                                     <view clipsSubviews="YES" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="Px6-AB-P51">
-                                                        <rect key="frame" x="253" y="77" width="76" height="32"/>
+                                                        <rect key="frame" x="253" y="76.999999999999886" width="76" height="32"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Frame 23" translatesAutoresizingMaskIntoConstraints="NO" id="Th7-Nb-RbA">
                                                                 <rect key="frame" x="13" y="8" width="16" height="16"/>
@@ -15624,7 +15625,7 @@ if __name__ == "__main__":
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LRR-3P-xy9" customClass="OpenSansLbl" customModule="ContactUnifier" customModuleProvider="target">
-                                                                <rect key="frame" x="42" y="8.6666666666666288" width="21" height="14.333333333333336"/>
+                                                                <rect key="frame" x="42" y="8.6666666666667425" width="21" height="14.333333333333336"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                 <color key="textColor" name="#1D1F20"/>
                                                                 <nil key="highlightedColor"/>
@@ -15716,7 +15717,7 @@ if __name__ == "__main__":
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view clipsSubviews="YES" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="wkG-ji-ev5">
-                                                <rect key="frame" x="20" y="914.66666666666674" width="353" height="202.66666666666674"/>
+                                                <rect key="frame" x="20" y="1006.6666666666666" width="353" height="202.66666666666663"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="6nU-rL-db6">
                                                         <rect key="frame" x="24" y="24" width="305" height="19.333333333333329"/>
@@ -15987,16 +15988,24 @@ if __name__ == "__main__":
                     </view>
                     <connections>
                         <outlet property="activityLbl" destination="eiw-s2-EKf" id="x3f-zg-x3l"/>
+                        <outlet property="addressLbl" destination="DoJ-uO-7sl" id="RXU-BJ-nld"/>
+                        <outlet property="company" destination="9ct-Pf-vvE" id="n3I-VP-6Kr"/>
                         <outlet property="contactInfoView" destination="uIn-C7-Wrs" id="jsL-z3-u7t"/>
+                        <outlet property="email" destination="Njp-g6-FqW" id="1s5-yo-DhN"/>
                         <outlet property="emptyMsg" destination="fME-oS-V4v" id="g27-oG-N8R"/>
                         <outlet property="emptyView" destination="b9S-1F-Vcu" id="GNp-FX-Op8"/>
+                        <outlet property="initialLbl" destination="Ia7-ZT-Z38" id="qTE-Y6-JMd"/>
                         <outlet property="interactionsCountLbl" destination="b1r-ym-aIL" id="m0D-fy-lW8"/>
+                        <outlet property="name" destination="htQ-pl-CEp" id="gFz-bM-M5V"/>
                         <outlet property="nameLbl" destination="htQ-pl-CEp" id="Gfe-Zj-M9u"/>
+                        <outlet property="phoneLbl" destination="8o4-g8-6C9" id="Mht-SZ-qTw"/>
                         <outlet property="quickActionsTopView" destination="yh6-o2-4JN" id="jl6-Oi-gLj"/>
                         <outlet property="quickActionsView" destination="Img-4t-U6l" id="VDW-VT-qrT"/>
+                        <outlet property="sourceLbl" destination="geC-6i-reu" id="4d1-df-rbE"/>
                         <outlet property="tagsCollectionView" destination="4Pb-n8-LTB" id="thU-CX-Oqc"/>
                         <outlet property="tbl" destination="QQa-ts-Vjv" id="uQr-Hw-BTo"/>
                         <outlet property="tblHeight" destination="k0X-G9-J9L" id="Bie-FV-eu3"/>
+                        <outlet property="titleLbl" destination="lTb-bl-uJE" id="xUP-f2-r3F"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dIA-3U-6dl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

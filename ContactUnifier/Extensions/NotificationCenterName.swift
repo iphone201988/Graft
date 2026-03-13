@@ -9,4 +9,5 @@ extension Notification.Name {
     static let videoDidFinish = Notification.Name("videoDidFinish")
     static let navigateToLoginView = Notification.Name("navigateToLoginView")
     static let navigateToSignInView = Notification.Name("navigateToSignInView")
+    static let updatedContact = Notification.Name("updatedContact")
 }

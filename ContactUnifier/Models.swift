@@ -46,4 +46,5 @@ struct NewAddingInfo {
     var interactionNote: String?
     var interactionCreatedAt: String?
     var interactionIcon: String?
+    var existingContactID: String?
 }

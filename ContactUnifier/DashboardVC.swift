@@ -69,6 +69,7 @@ class DashboardVC: UIViewController {
     @IBOutlet weak var resetDoneBottomView: UIView!
     @IBOutlet weak var optionsView: UIView!
     @IBOutlet weak var optionsBottomView: UIView!
+    @IBOutlet weak var birthdayTblHeight: NSLayoutConstraint!
     
     var dashboardMenus = [["title": "Total Contacts", "count": "1393", "desc": "Across all sources", "icon": "Frame-2"],
                           ["title": "Duplicates Found", "count": "710", "desc": "Need review", "icon": "Frame 2"],
@@ -93,6 +94,8 @@ class DashboardVC: UIViewController {
     
     var customOptions = ["Show:", "Key Metrics", "Recent Activity", "Favorites", "Upcoming Birthdays", "Potential Duplicates"]
     
+    var upcoming_birthdays = [Favorite]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let layout = LeftAlignedFlowLayout()
@@ -111,6 +114,24 @@ class DashboardVC: UIViewController {
         guard let destVC = storyboard.instantiateViewController(withIdentifier: "ConnectYourContactsVC") as? ConnectYourContactsVC
         else { return }
         SharedMethods.shared.presentVC(destVC: destVC, modalPresentationStyle: .overFullScreen)
+        
+        birthdayTableView.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        Task {
+            await getDashboard()
+        }
+    }
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if keyPath == "contentSize", object is UITableView {
+            UIView.performWithoutAnimation {
+                birthdayTblHeight.constant = birthdayTableView.contentSize.height
+                view.layoutIfNeeded()
+            }
+        }
     }
     
     @IBAction func menu(_ sender: UIButton) {
@@ -179,7 +200,7 @@ extension DashboardVC: UITableViewDelegate,UITableViewDataSource {
         } else if tableView == favTableView {
             return favs.count
         } else if tableView == birthdayTableView {
-            return birthdays.count
+            return upcoming_birthdays.count
         } else {
             return dashboardMenus.count
         }
@@ -237,16 +258,12 @@ extension DashboardVC: UITableViewDelegate,UITableViewDataSource {
             return cell
         }  else if tableView == birthdayTableView {
             let cell = tableView.dequeueReusableCell(withIdentifier: UserCell.identifier, for: indexPath) as! UserCell
-            let details = birthdays[indexPath.row]
-            let inital = details["inital"]
-            let name = details["name"]
-            let msg = details["msg"]
-            let time = details["time"]
-            
-            cell.initalLbl.text = inital
-            cell.nameLbl.text = name
-            cell.msgLbl.text = msg
-            cell.timeLbl.text = time
+            let details = upcoming_birthdays[indexPath.row]
+            cell.initalLbl.text = SharedMethods.shared.getInitials(from: details.full_name ?? "")
+            cell.nameLbl.text = details.full_name ?? ""
+            cell.msgLbl.text = SharedMethods.shared.formatBirthday(details.birthday ?? "")
+            cell.timeLbl.text = ""
+            cell.leftDaysLbl.text = "\(details.days_until ?? 0) days"
             cell.starIcon.isHidden = true
             cell.dayView.isHidden = false
             
@@ -278,13 +295,13 @@ extension DashboardVC: UITableViewDelegate,UITableViewDataSource {
         } else if tableView == favTableView {
             let sb = AppStoryboards.main.storyboardInstance
             let destVC = sb.instantiateViewController(withIdentifier: "ContactDetailsVC") as! ContactDetailsVC
-            destVC.isViaLostTouch = true
+            destVC.isShowInfo = true
             SharedMethods.shared.pushTo(destVC: destVC)
             
         } else if tableView == birthdayTableView {
             let sb = AppStoryboards.main.storyboardInstance
             let destVC = sb.instantiateViewController(withIdentifier: "ContactDetailsVC") as! ContactDetailsVC
-            destVC.isViaLostTouch = true
+            destVC.isShowInfo = true
             SharedMethods.shared.pushTo(destVC: destVC)
             
         } else {
@@ -444,41 +461,31 @@ extension DashboardVC: UICollectionViewDataSource,
     }
 }
 
-class LeftAlignedFlowLayout: UICollectionViewFlowLayout {
-    
-    override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
-        guard let originalAttributes = super.layoutAttributesForElements(in: rect) else { return nil }
-        
-        let attributes = originalAttributes.map { $0.copy() as! UICollectionViewLayoutAttributes }
-        
-        var leftMargin: CGFloat = sectionInset.left
-        var maxY: CGFloat = -1.0
-        
-        for layoutAttribute in attributes {
-            guard layoutAttribute.representedElementCategory == .cell else { continue }
-            
-            // ✅ New row detect — origin.y change hua matlab new row
-            if layoutAttribute.frame.origin.y >= maxY {
-                leftMargin = sectionInset.left
+extension DashboardVC {
+    fileprivate func getDashboard() async {
+        let res = await RemoteRequestManager.shared.dataTask(endpoint: .dashboard,
+                                                             model: DashboardModel.self,
+                                                             method: .get,
+                                                             body: .rawJSON)
+        await MainActor.run {
+            switch res {
+            case .failure(let err):
+                Toast.show(message: err.localizedDescription)
+                
+            case .success(let details):
+                if let dashboardDetails = details.data {
+                    if let stats = dashboardDetails.stats {
+                        dashboardMenus[0]["count"] = "\(stats.total_contacts ?? 0)"
+                        dashboardMenus[1]["count"] = "\(stats.duplicates_found ?? 0)"
+                        dashboardMenus[2]["count"] = "\(stats.lost_touch ?? 0)"
+                        dashboardMenus[3]["count"] = "\(stats.connected_sources ?? 0)"
+                        dashboardOptionsCollectionView.reloadData()
+                    }
+                    
+                    upcoming_birthdays = dashboardDetails.lists?.upcoming_birthdays ?? []
+                    birthdayTableView.reloadData()
+                }
             }
-            
-            layoutAttribute.frame.origin.x = leftMargin
-            leftMargin += layoutAttribute.frame.width + minimumInteritemSpacing
-            maxY = max(layoutAttribute.frame.maxY, maxY)
-        }
-        
-        return attributes
-    }
-}
-
-class DynamicHeightCollectionView: UICollectionView {
-    override var intrinsicContentSize: CGSize {
-        return contentSize
-    }
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        if bounds.size != intrinsicContentSize {
-            invalidateIntrinsicContentSize()
         }
     }
 }
