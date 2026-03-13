@@ -35,12 +35,12 @@ class CreateLogInteractionVC: UIViewController {
             formatter.dateFormat = "MMM d, yyyy 'at' h:mm a"
             let createdAt = formatter.string(from: date)
             let details =
-            NewInteraction(
-                type: self?.chooseTypeTF.text,
-                subject: self?.subjectTV.text,
-                note: self?.noteTV.text,
-                createdAt: createdAt,
-                icon: self?.selectedSource["icon"] as? String
+            NewAddingInfo(
+                interactionType: self?.chooseTypeTF.text,
+                interactionSubject: self?.subjectTV.text,
+                interactionNote: self?.noteTV.text,
+                interactionCreatedAt: createdAt,
+                interactionIcon: self?.selectedSource["icon"] as? String
             )
             
             self?.servicesEvents?.createdLogInteraction(info: details)

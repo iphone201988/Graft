@@ -2,6 +2,8 @@ import UIKit
 
 class CreateTagVC: UIViewController {
     
+    @IBOutlet weak var name: OpenSansTF!
+    @IBOutlet weak var notes: OpenSansTV!
     @IBOutlet weak var collectionView: UICollectionView! {
         didSet {
             collectionView.registerCellFromNib(cellID: TagColorCell.identifier)
@@ -9,30 +11,10 @@ class CreateTagVC: UIViewController {
             collectionView.showsHorizontalScrollIndicator = false
         }
     }
-    
-    let tags = [
-        
-        // Top Row
-        ["tag": "blue",        "color": "#3B82F6"],
-        ["tag": "purple",      "color": "#8B5CF6"],
-        ["tag": "pink",        "color": "#EC4899"],
-        ["tag": "green",       "color": "#10B981"],
-        ["tag": "amber",       "color": "#F59E0B"],
-        ["tag": "red",         "color": "#EF4444"],
-        ["tag": "cyan",        "color": "#06B6D4"],
-        ["tag": "lime",        "color": "#84CC16"],
-        
-        // Bottom Row
-        ["tag": "orange",      "color": "#F97316"],
-        ["tag": "teal",        "color": "#14B8A6"],
-        ["tag": "violet",      "color": "#A855F7"],
-        ["tag": "indigo",      "color": "#6366F1"],
-        ["tag": "magenta",     "color": "#D946EF"],
-        ["tag": "sky blue",    "color": "#0EA5E9"],
-        ["tag": "gray",        "color": "#64748B"]
-    ]
-    
-    var selectedTagColor = ""
+
+    var tagColors = Set<ColorData>()
+    var selectedTagColor: ColorData?
+    var servicesEvents: ServicesEvents?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +25,13 @@ class CreateTagVC: UIViewController {
     }
     
     @IBAction func createTag(_ sender: UIButton) {
-        dismiss(animated: true)
+        dismiss(animated: true) {
+            let info = NewAddingInfo(tagName: self.name.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? "",
+                                     tagDesc: self.notes.text.trimmingCharacters(in: .whitespacesAndNewlines),
+                                     tagColorID: "\(self.selectedTagColor?.id ?? 0)",
+                                     tagHexaColor: self.selectedTagColor?.code ?? "")
+            self.servicesEvents?.createdTag(info: info)
+        }
     }
 }
 
@@ -52,7 +40,7 @@ extension CreateTagVC: UICollectionViewDataSource,
                        UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        tags.count
+        tagColors.count
     }
     
     func collectionView(_ collectionView: UICollectionView,
@@ -75,10 +63,10 @@ extension CreateTagVC: UICollectionViewDataSource,
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TagColorCell.identifier, for: indexPath) as! TagColorCell
-        let tag = tags[indexPath.row]
-        let color = tag["color"] ?? ""
-        cell.tagIcon.tintColor = UIColor(named: tag["color"] ?? "")
-        if selectedTagColor == color {
+        let tagsArray = Array(tagColors)
+        let tag = tagsArray[indexPath.row]
+        cell.tagIcon.tintColor = UIColor(hex: tag.code ?? "")
+        if selectedTagColor?.code == tag.code ?? "" {
             cell.tagView.borderWidth = 2
         } else {
             cell.tagView.borderWidth = 0
@@ -87,8 +75,8 @@ extension CreateTagVC: UICollectionViewDataSource,
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let tag = tags[indexPath.row]
-        selectedTagColor = tag["color"] ?? ""
+        let tagsArray = Array(tagColors)
+        selectedTagColor = tagsArray[indexPath.row]
         self.collectionView.reloadData()
     }
 }

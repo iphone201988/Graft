@@ -364,3 +364,9 @@ enum MergeContactEvents {
     case normal
     case merge
 }
+
+enum ForgotPasswordEvents: Int {
+    case sendCode = 1
+    case verifyCode = 2
+    case changePassword = 3
+}

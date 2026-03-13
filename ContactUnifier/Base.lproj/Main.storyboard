@@ -222,6 +222,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="xW2-9g-Au8"/>
                     <connections>
+                        <outlet property="email" destination="opG-Vb-6og" id="M6f-ji-wz8"/>
+                        <outlet property="name" destination="aFW-Jp-swZ" id="acd-yU-0yn"/>
                         <outlet property="tableView" destination="2ks-Mz-mRY" id="JoT-C1-meA"/>
                     </connections>
                 </viewController>
@@ -3496,7 +3498,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12 tags to organize your contacts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZaY-aP-Vh2" customClass="OpenSansLbl" customModule="ContactUnifier" customModuleProvider="target">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 tags to organize your contacts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZaY-aP-Vh2" customClass="OpenSansLbl" customModule="ContactUnifier" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="28.666666666666657" width="353" height="28.666666666666671"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" name="#4D5256"/>
@@ -3629,6 +3631,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="groupCount" destination="ZaY-aP-Vh2" id="hfV-Pm-5j6"/>
                         <outlet property="tableView" destination="hs6-dY-vKm" id="VEq-g3-uuD"/>
                     </connections>
                 </viewController>
@@ -4617,6 +4620,8 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="qUG-W1-Vcv" id="znS-mk-m32"/>
+                        <outlet property="name" destination="4RK-HT-Df4" id="pn9-jk-xDV"/>
+                        <outlet property="notes" destination="pAu-UK-Pxl" id="B8w-b0-tbd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fmb-6H-Nrk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

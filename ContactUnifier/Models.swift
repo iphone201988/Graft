@@ -21,7 +21,7 @@ struct Contacts {
     var data: [ContactInfo]
 }
 
-struct NewContactInfo {
+struct NewAddingInfo {
     var firstName: String?
     var lastName: String?
     var email: String?
@@ -36,12 +36,14 @@ struct NewContactInfo {
     var birthday: String?
     var note: String?
     var initials: String?
-}
-
-struct NewInteraction {
-    var type: String?
-    var subject: String?
-    var note: String?
-    var createdAt: String?
-    var icon: String?
+    var socialURL: String?
+    var tagName: String?
+    var tagDesc: String?
+    var tagColorID: String?
+    var tagHexaColor: String?
+    var interactionType: String?
+    var interactionSubject: String?
+    var interactionNote: String?
+    var interactionCreatedAt: String?
+    var interactionIcon: String?
 }

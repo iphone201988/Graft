@@ -30,7 +30,7 @@ class ContactDetailsVC: UIViewController {
     // No interactions recorded
     // 0 interactions
     
-    var interactionLogs = [NewInteraction]()
+    var interactionLogs = [NewAddingInfo]()
     var tags = ["tech", "networking", "executive", "investor"]
     var isViaLostTouch: Bool = false
     
@@ -125,17 +125,17 @@ extension ContactDetailsVC: UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: InteractionHistoryCell.identifier, for: indexPath) as! InteractionHistoryCell
         let item = interactionLogs[indexPath.row]
-        cell.typeLbl.text = item.type ?? ""
-        cell.icon.image = UIImage(named: item.icon ?? "")
-        cell.createdAtLbl.text = item.createdAt ?? ""
+        cell.typeLbl.text = item.interactionType ?? ""
+        cell.icon.image = UIImage(named: item.interactionIcon ?? "")
+        cell.createdAtLbl.text = item.interactionCreatedAt ?? ""
         return cell
     }
 }
 
 extension ContactDetailsVC: ServicesEvents {
-    func createdContact(info: NewContactInfo) { }
+    func createdContact(info: NewAddingInfo) { }
     
-    func createdLogInteraction(info: NewInteraction) {
+    func createdLogInteraction(info: NewAddingInfo) {
         activityLbl.text = "Last contacted less than a minute ago"
         interactionLogs.append(info)
         interactionsCountLbl.text = "\(interactionLogs.count) interactions"

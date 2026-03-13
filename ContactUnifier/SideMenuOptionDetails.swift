@@ -5,6 +5,8 @@ var selectedOptions = ""
 class SideMenuOptionsVC: UIViewController {
     
     // MARK: Outlets
+    @IBOutlet weak var name: OpenSansLbl!
+    @IBOutlet weak var email: OpenSansLbl!
     @IBOutlet weak var tableView: UITableView! {
         didSet{
             tableView.sectionFooterHeight = 0
@@ -33,6 +35,11 @@ class SideMenuOptionsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        Task {
+            await profile()
+        }
+        
+        populateData()
     }
     
     // MARK: IB Actions
@@ -166,12 +173,60 @@ extension SideMenuOptionsVC: UITableViewDelegate,UITableViewDataSource {
                                          message: "Are you sure you want to logout?",
                                          actionTitles: ["Logout", "No"],
                                          actions: [{ _, _ in
-                        selectedOptions = ""
-                        if let vc = AppStoryboards.main.controller(LoginVC.self) {
-                            SharedMethods.shared.navigateToRootVC(rootVC: vc)
+                        Task {
+                            await self.logout()
+                            UserDefaults.standard.clearAllLocallySavedData()
+                            selectedOptions = ""
+                            if let vc = AppStoryboards.main.controller(LoginVC.self) {
+                                SharedMethods.shared.navigateToRootVC(rootVC: vc)
+                            }
                         }
                     }])
                 }
+            }
+        }
+    }
+}
+
+extension SideMenuOptionsVC {
+    
+    fileprivate func profile() async {
+        let res = await RemoteRequestManager.shared.dataTask(endpoint: .profile,
+                                                             model: UserModel.self,
+                                                             method: .get,
+                                                             body: .rawJSON)
+        await MainActor.run {
+            switch res {
+            case .failure(let err):
+                Toast.show(message: err.localizedDescription)
+                
+            case .success(let details):
+                if let user = details.data?.user {
+                    UserDefaults.standard[.loggedUserDetails] = user
+                    populateData()
+                }
+            }
+        }
+    }
+    
+    fileprivate func populateData() {
+        let details = UserDefaults.standard[.loggedUserDetails]
+        name.text = details?.name ?? ""
+        email.text = details?.email ?? ""
+    }
+    
+    fileprivate func logout() async {
+        let res = await RemoteRequestManager.shared.dataTask(endpoint: .logout,
+                                                             model: UserModel.self,
+                                                             method: .post,
+                                                             body: .rawJSON)
+        await MainActor.run {
+            switch res {
+            case .failure(let err):
+                Toast.show(message: err.localizedDescription)
+                
+            case .success:
+                LogHandler.debugLog("Logout")
             }
         }
     }

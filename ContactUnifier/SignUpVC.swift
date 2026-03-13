@@ -69,7 +69,6 @@ class SignUpVC: UIViewController {
     }
     
     @IBAction func signUp(_ sender: UIButton) {
-        
         let name = nameTF.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
         let email = email.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
         let password = password.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
@@ -80,9 +79,20 @@ class SignUpVC: UIViewController {
                 if password != confirmPassword {
                     Toast.show(message: "Password does not match i.e. Password & Confirm Password should be same")
                 } else {
-                    if let vc = AppStoryboards.main.controller(DashboardVC.self) {
-                        SharedMethods.shared.navigateToRootVC(rootVC: vc)
-                    }
+                    let params = [
+                        "email": email,
+                        "password": password,
+                        "password_confirmation": password,
+                        "name": name,
+                        "device_type": deviceType,
+                        "device_token": UserDefaults.standard[.deviceToken] ?? "123",
+                        "timezone": TimeZone.current.identifier,
+                        //"device_name": "optional",
+                        //"device_fingerprint": "optional",
+                        //"app_version": "optional",
+                        //"os_version": "optional"
+                    ] as [String : Any]
+                    Task { await signup(params) }
                 }
             } else {
                 Toast.show(message: "Please enter valid email")
@@ -109,6 +119,37 @@ class SignUpVC: UIViewController {
             confirmPassword.isSecureTextEntry = true
         } else {
             confirmPassword.isSecureTextEntry = false
+        }
+    }
+}
+
+extension SignUpVC {
+    fileprivate func signup(_ params: [String: Any]) async {
+        let res = await RemoteRequestManager.shared.dataTask(endpoint: .register,
+                                                             model: UserModel.self,
+                                                             params: params,
+                                                             method: .post,
+                                                             body: .rawJSON)
+        await MainActor.run {
+            switch res {
+            case .failure(let err):
+                Toast.show(message: err.localizedDescription)
+                
+            case .success(let details):
+                if
+                    let access_token = details.data?.access_token,
+                    let refresh_token = details.data?.refresh_token {
+                    UserDefaults.standard[.accessToken] = access_token
+                    UserDefaults.standard[.refreshToken] = refresh_token
+                }
+                
+                if let user = details.data?.user {
+                    UserDefaults.standard[.loggedUserDetails] = user
+                    if let vc = AppStoryboards.main.controller(DashboardVC.self) {
+                        SharedMethods.shared.navigateToRootVC(rootVC: vc)
+                    }
+                }
+            }
         }
     }
 }

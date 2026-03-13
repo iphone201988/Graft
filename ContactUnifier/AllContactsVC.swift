@@ -50,27 +50,17 @@ class AllContactsVC: UIViewController {
     var sourcePopupView: TagPopupView?
     var tagPopupView: TagPopupView?
     var viewAllFavorites: Bool = false
-    var addedContacts = [NewContactInfo]()
+    var addedContacts = [ContactData]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         emptyView.isHidden = true
         tableView.isHidden = false
-        
-        let info1 = NewContactInfo(firstName: "Aaron", lastName: "Cohn", email: "support@graft.com", phoneNumber: "(203)524-7262", initials: "AC")
-        let info2 = NewContactInfo(firstName: "David", lastName: "Hanley", email: "support@graft.com", phoneNumber: "(203)524-7262", initials: "DH")
-        let info3 = NewContactInfo(firstName: "Abby", lastName: "Barlett", email: "support@graft.com", phoneNumber: "(203)524-7262", initials: "AB")
-        let info4 = NewContactInfo(firstName: "Agustina", lastName: "Hobbs", email: "support@graft.com", phoneNumber: "(203)524-7262", initials: "AH")
-        
-        addedContacts.append(info1)
-        addedContacts.append(info2)
-        addedContacts.append(info3)
-        addedContacts.append(info4)
-        
         contactsCountLbl.text = "\(addedContacts.count) contacts"
-        
         tableView.reloadData()
+        Task {
+            await getContacts()
+        }
     }
     
     @IBAction func menu(_ sender: UIButton) {
@@ -230,13 +220,11 @@ extension AllContactsVC: UITableViewDelegate,UITableViewDataSource {
         }
         
         let details = addedContacts[indexPath.row]
-        cell.initialLbl.text = details.initials ?? ""
-        let fn = details.firstName ?? ""
-        let ln = details.lastName ?? ""
-        let fullName = "\(fn) \(ln)".trimmingCharacters(in: .whitespaces)
-        cell.nameLbl.text = fullName
-        cell.emailLbl.text = details.email ?? ""
-        cell.phoneLbl.text = details.phoneNumber ?? ""
+        let initials = SharedMethods.shared.getInitials(from: details.full_name ?? "")
+        cell.initialLbl.text = initials
+        cell.nameLbl.text = details.full_name ?? ""
+        cell.emailLbl.text = details.primary_email ?? ""
+        cell.phoneLbl.text = details.primary_phone ?? ""
         
         cell.moreBtn.tag = indexPath.row
         cell.moreBtn.addTarget(self, action: #selector(moreOptions(_ :)), for: .touchUpInside)
@@ -253,13 +241,13 @@ extension AllContactsVC: UITableViewDelegate,UITableViewDataSource {
             title: "Archive",
             image: UIImage(systemName: "archivebox")
         ) { _ in }
-
+        
         let delete = UIAction(
             title: "Delete",
             image: UIImage(systemName: "trash"),
             attributes: .destructive
         ) { _ in }
-
+        
         sender.menu = UIMenu(children: [edit, delete])
         sender.showsMenuAsPrimaryAction = true
     }
@@ -355,9 +343,74 @@ class TagPopupView: UIView, UITableViewDelegate, UITableViewDataSource {
 }
 
 extension AllContactsVC: ServicesEvents {
-    func createdContact(info: NewContactInfo) {
-        addedContacts.insert(info, at: 0)
-        contactsCountLbl.text = "\(addedContacts.count) contacts"
-        tableView.reloadData()
+    func createdContact(info: NewAddingInfo) {
+        let params: [String: Any] = [
+            "first_name": info.firstName ?? "",
+            "last_name": info.lastName ?? "",
+            "company": info.company ?? "",
+            "job_title": info.jobTitle ?? "",
+            "phone": info.phoneNumber ?? "",
+            "email": info.email ?? "",
+            "birthday": info.birthday ?? "",
+            "address": [
+                "street": info.street ?? "",
+                "city": info.city ?? "",
+                "state": info.state ?? "",
+                "zip_code": info.zip ?? "",
+                "country": info.country ?? ""
+            ],
+            "social_url": info.socialURL ?? "",
+            "note": info.note ?? ""
+        ]
+        
+        Task {
+            await createContact(params)
+        }
+    }
+}
+
+extension AllContactsVC {
+    
+    fileprivate func getContacts() async {
+        let res = await RemoteRequestManager.shared.dataTask(endpoint: .contacts,
+                                                             model: ContactsModel.self,
+                                                             method: .get,
+                                                             body: .rawJSON)
+        await MainActor.run {
+            switch res {
+            case .failure(let err):
+                Toast.show(message: err.localizedDescription)
+                
+            case .success(let details):
+                if let contacts = details.data?.data {
+                    addedContacts = contacts
+                    contactsCountLbl.text = "\(addedContacts.count) contacts"
+                    tableView.reloadData()
+                }
+            }
+        }
+    }
+    
+    fileprivate func createContact(_ params: [String: Any]) async {
+        let res = await RemoteRequestManager.shared.dataTask(endpoint: .contacts,
+                                                             model: ContactModel.self,
+                                                             params: params,
+                                                             method: .post,
+                                                             body: .rawJSON)
+        await MainActor.run {
+            switch res {
+            case .failure(let err):
+                Toast.show(message: err.localizedDescription)
+                
+            case .success(let details):
+                Toast.show(message: "Contact added successfully.") {
+                    if let contacts = details.data {
+                        self.addedContacts.insert(contacts, at: 0)
+                        self.contactsCountLbl.text = "\(self.addedContacts.count) contacts"
+                        self.tableView.reloadData()
+                    }
+                }
+            }
+        }
     }
 }

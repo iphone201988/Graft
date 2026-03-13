@@ -196,4 +196,19 @@ class SharedMethods {
             .map { String($0).uppercased() }
             .joined()
     }
+    
+    // MARK: - Email Validation
+    func isValidEmail(_ email: String) -> Bool {
+        let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegex)
+        return emailPred.evaluate(with: email)
+    }
+    
+    // MARK: - Phone Validation
+    func isValidPhone(_ phone: String) -> Bool {
+        // Accepts only digits (no +, -, or spaces), length between 10–12
+        let phoneRegex = "^[0-9]{10,12}$"
+        let phonePred = NSPredicate(format: "SELF MATCHES %@", phoneRegex)
+        return phonePred.evaluate(with: phone)
+    }
 }

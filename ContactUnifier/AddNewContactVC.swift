@@ -22,6 +22,7 @@ class AddNewContactVC: UIViewController {
     
     var servicesEvents: ServicesEvents?
     var interfaceTitle = "Add New Contact"
+    var birthdayParam = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +51,7 @@ class AddNewContactVC: UIViewController {
         let state = state.text?.trimmingCharacters(in: .whitespacesAndNewlines)
         let zipCode = zip.text?.trimmingCharacters(in: .whitespacesAndNewlines)
         let country = country.text?.trimmingCharacters(in: .whitespacesAndNewlines)
-        let dob = dobTF.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+        let _ = dobTF.text?.trimmingCharacters(in: .whitespacesAndNewlines)
         let notes = notes.text?.trimmingCharacters(in: .whitespacesAndNewlines)
         
         if firstName.isEmpty || lastName.isEmpty || email.isEmpty || phoneNumber.isEmpty {
@@ -59,9 +60,9 @@ class AddNewContactVC: UIViewController {
             if email.isEmail {
                 if phoneNumber.isPhoneNumber {
                     dismiss(animated: true) {
-                        let fullname = "\(firstName ?? "") \(lastName ?? "")"
+                        let fullname = "\(firstName) \(lastName)"
                         let initials = SharedMethods.shared.getInitials(from: fullname)
-                        let info = NewContactInfo(firstName: firstName,
+                        let info = NewAddingInfo(firstName: firstName,
                                                   lastName: lastName,
                                                   email: email,
                                                   phoneNumber: phoneNumber,
@@ -72,7 +73,7 @@ class AddNewContactVC: UIViewController {
                                                   state: state,
                                                   zip: zipCode,
                                                   country: country,
-                                                  birthday: dob,
+                                                  birthday: self.birthdayParam,
                                                   note: notes,
                                                   initials: initials)
                         self.servicesEvents?.createdContact(info: info)
@@ -121,8 +122,9 @@ class AddNewContactVC: UIViewController {
             
             let formatter = DateFormatter()
             formatter.dateFormat = "dd/MM/yyyy"
-            
             dobTF.text = formatter.string(from: datePicker.date)
+            formatter.dateFormat = "yyyy-MM-dd" //"1985-03-15"
+            birthdayParam = formatter.string(from: datePicker.date)
         }
         
         dobTF.resignFirstResponder()

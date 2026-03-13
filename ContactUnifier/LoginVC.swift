@@ -68,22 +68,27 @@ class LoginVC: UIViewController {
     }
     
     @IBAction func signIn(_ sender: UIButton) {
-//        let email = email.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
-//        let password = password.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
-//        if !email.isEmpty && !password.isEmpty {
-//            if email.isEmail {
-//                if let vc = AppStoryboards.main.controller(DashboardVC.self) {
-//                    SharedMethods.shared.navigateToRootVC(rootVC: vc)
-//                }
-//            } else {
-//                Toast.show(message: "Please enter valid email")
-//            }
-//        } else {
-//            Toast.show(message: "All fields are required")
-//        }
-        
-        if let vc = AppStoryboards.main.controller(DashboardVC.self) {
-            SharedMethods.shared.navigateToRootVC(rootVC: vc)
+        let email = email.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+        let password = password.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+        if !email.isEmpty && !password.isEmpty {
+            if email.isEmail {
+                let params = [
+                    "email": email,
+                    "password": password,
+                    "device_type": deviceType,
+                    "device_token": UserDefaults.standard[.deviceToken] ?? "123",
+                    "timezone": TimeZone.current.identifier,
+                    //"device_name": "optional",
+                    //"device_fingerprint": "optional",
+                    //"app_version": "optional",
+                    //"os_version": "optional"
+                ] as [String : Any]
+                Task { await login(params) }
+            } else {
+                Toast.show(message: "Please enter valid email")
+            }
+        } else {
+            Toast.show(message: "All fields are required")
         }
     }
     
@@ -98,6 +103,37 @@ class LoginVC: UIViewController {
             password.isSecureTextEntry = true
         } else {
             password.isSecureTextEntry = false
+        }
+    }
+}
+
+extension LoginVC {
+    fileprivate func login(_ params: [String: Any]) async {
+        let res = await RemoteRequestManager.shared.dataTask(endpoint: .login,
+                                                             model: UserModel.self,
+                                                             params: params,
+                                                             method: .post,
+                                                             body: .rawJSON)
+        await MainActor.run {
+            switch res {
+            case .failure(let err):
+                Toast.show(message: err.localizedDescription)
+                
+            case .success(let details):
+                if
+                    let access_token = details.data?.access_token,
+                    let refresh_token = details.data?.refresh_token {
+                    UserDefaults.standard[.accessToken] = access_token
+                    UserDefaults.standard[.refreshToken] = refresh_token
+                }
+                
+                if let user = details.data?.user {
+                    UserDefaults.standard[.loggedUserDetails] = user
+                    if let vc = AppStoryboards.main.controller(DashboardVC.self) {
+                        SharedMethods.shared.navigateToRootVC(rootVC: vc)
+                    }
+                }
+            }
         }
     }
 }

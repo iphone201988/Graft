@@ -10,18 +10,18 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="83" id="KGk-i7-Jjw" customClass="GroupCell" customModule="ContactUnifier" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="485" height="83"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="84" id="KGk-i7-Jjw" customClass="GroupCell" customModule="ContactUnifier" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="485" height="84"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="485" height="83"/>
+                <rect key="frame" x="0.0" y="0.0" width="485" height="84"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view clipsSubviews="YES" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="fE8-Vx-XNs">
-                        <rect key="frame" x="2" y="2" width="481" height="75"/>
+                        <rect key="frame" x="2" y="2" width="481" height="76"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gGl-bW-mUn">
-                                <rect key="frame" x="16" y="29.666666666666671" width="16" height="16"/>
+                                <rect key="frame" x="16" y="30" width="16" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="gGl-bW-mUn" secondAttribute="height" multiplier="1:1" id="l9l-Td-NVe"/>
                                     <constraint firstAttribute="width" constant="16" id="vJi-fo-HhU"/>
@@ -31,7 +31,7 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hjf-f9-7iD">
-                                <rect key="frame" x="44" y="20.333333333333332" width="327" height="34.333333333333343"/>
+                                <rect key="frame" x="44" y="20.333333333333332" width="327" height="35.333333333333343"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="business" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eqi-NY-aPQ" customClass="OpenSansLbl" customModule="ContactUnifier" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="57.333333333333336" height="17"/>
@@ -44,8 +44,8 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Business contacts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mtI-0Z-Pdh" customClass="OpenSansLbl" customModule="ContactUnifier" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="20.000000000000004" width="103" height="14.333333333333332"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Business contacts" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mtI-0Z-Pdh" customClass="OpenSansLbl" customModule="ContactUnifier" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="21.000000000000004" width="327" height="14.333333333333332"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" name="#4D5256"/>
                                         <nil key="highlightedColor"/>
@@ -58,7 +58,8 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="mtI-0Z-Pdh" firstAttribute="top" secondItem="Eqi-NY-aPQ" secondAttribute="bottom" constant="3" id="8eu-sv-4c1"/>
+                                    <constraint firstItem="mtI-0Z-Pdh" firstAttribute="centerX" secondItem="Hjf-f9-7iD" secondAttribute="centerX" id="0Ao-D7-GXf"/>
+                                    <constraint firstItem="mtI-0Z-Pdh" firstAttribute="top" secondItem="Eqi-NY-aPQ" secondAttribute="bottom" constant="4" id="8eu-sv-4c1"/>
                                     <constraint firstItem="Eqi-NY-aPQ" firstAttribute="leading" secondItem="Hjf-f9-7iD" secondAttribute="leading" id="9u1-fC-yCm"/>
                                     <constraint firstItem="mtI-0Z-Pdh" firstAttribute="leading" secondItem="Eqi-NY-aPQ" secondAttribute="leading" id="BGy-g9-1Xq"/>
                                     <constraint firstAttribute="bottom" secondItem="mtI-0Z-Pdh" secondAttribute="bottom" id="Fqv-Qg-CV5"/>
@@ -66,7 +67,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="M0B-9D-ng9">
-                                <rect key="frame" x="381" y="29.666666666666671" width="80" height="16"/>
+                                <rect key="frame" x="381" y="30" width="80" height="16"/>
                                 <subviews>
                                     <view clipsSubviews="YES" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="ImM-g3-07D">
                                         <rect key="frame" x="0.0" y="0.0" width="16" height="16"/>
@@ -118,6 +119,7 @@
                                             <constraint firstItem="pNi-XG-1yQ" firstAttribute="top" secondItem="oTj-FP-h3D" secondAttribute="top" constant="-10" id="2vf-ah-0Ei"/>
                                             <constraint firstItem="Xsd-XL-QLh" firstAttribute="centerX" secondItem="oTj-FP-h3D" secondAttribute="centerX" id="6u7-li-ODq"/>
                                             <constraint firstItem="pNi-XG-1yQ" firstAttribute="leading" secondItem="oTj-FP-h3D" secondAttribute="leading" constant="-10" id="8vB-po-24I"/>
+                                            <constraint firstAttribute="width" secondItem="oTj-FP-h3D" secondAttribute="height" multiplier="1:1" id="GYi-Rb-T1M"/>
                                             <constraint firstAttribute="width" secondItem="oTj-FP-h3D" secondAttribute="height" multiplier="1:1" id="Nbm-aJ-QNe"/>
                                             <constraint firstItem="Xsd-XL-QLh" firstAttribute="top" secondItem="oTj-FP-h3D" secondAttribute="top" id="RyQ-TI-grx"/>
                                             <constraint firstAttribute="width" constant="16" id="T9x-rO-fTD"/>
@@ -147,6 +149,7 @@
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstAttribute="width" secondItem="EYE-MD-fFO" secondAttribute="height" multiplier="1:1" id="1gQ-UX-qmR"/>
                                             <constraint firstItem="kkZ-Nu-9Nz" firstAttribute="centerX" secondItem="EYE-MD-fFO" secondAttribute="centerX" id="63s-XV-Mc4"/>
                                             <constraint firstItem="kkZ-Nu-9Nz" firstAttribute="centerY" secondItem="EYE-MD-fFO" secondAttribute="centerY" id="CkE-pA-m9n"/>
                                             <constraint firstItem="kkZ-Nu-9Nz" firstAttribute="top" secondItem="EYE-MD-fFO" secondAttribute="top" constant="-10" id="Pnu-AU-tTh"/>
@@ -165,10 +168,6 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="EYE-MD-fFO" firstAttribute="width" secondItem="EYE-MD-fFO" secondAttribute="height" multiplier="1:1" id="1gQ-UX-qmR"/>
-                                    <constraint firstItem="oTj-FP-h3D" firstAttribute="width" secondItem="oTj-FP-h3D" secondAttribute="height" multiplier="1:1" id="GYi-Rb-T1M"/>
-                                </constraints>
                             </stackView>
                             <view clipsSubviews="YES" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="qv8-MX-CT8">
                                 <rect key="frame" x="111.33333333333334" y="18" width="64.333333333333343" height="22"/>
@@ -206,14 +205,15 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="M0B-9D-ng9" secondAttribute="trailing" constant="20" id="1ty-eB-Q42"/>
                             <constraint firstItem="Hjf-f9-7iD" firstAttribute="leading" secondItem="gGl-bW-mUn" secondAttribute="trailing" constant="12" id="BMX-NH-dyP"/>
+                            <constraint firstItem="Hjf-f9-7iD" firstAttribute="top" secondItem="fE8-Vx-XNs" secondAttribute="top" constant="20.333333333333332" id="CeJ-rF-YEn"/>
                             <constraint firstItem="gGl-bW-mUn" firstAttribute="centerY" secondItem="fE8-Vx-XNs" secondAttribute="centerY" id="FPc-85-dwb"/>
+                            <constraint firstAttribute="bottom" secondItem="Hjf-f9-7iD" secondAttribute="bottom" constant="20.333333333333329" id="ODe-Mq-wlR"/>
                             <constraint firstItem="M0B-9D-ng9" firstAttribute="centerY" secondItem="Hjf-f9-7iD" secondAttribute="centerY" id="ZkW-Ip-rQx"/>
                             <constraint firstItem="qv8-MX-CT8" firstAttribute="leading" secondItem="Eqi-NY-aPQ" secondAttribute="trailing" constant="10" id="ckZ-7p-XH6"/>
                             <constraint firstItem="gGl-bW-mUn" firstAttribute="leading" secondItem="fE8-Vx-XNs" secondAttribute="leading" constant="16" id="f80-lq-lXb"/>
                             <constraint firstItem="M0B-9D-ng9" firstAttribute="leading" secondItem="Hjf-f9-7iD" secondAttribute="trailing" constant="10" id="hGa-gb-LKX"/>
                             <constraint firstItem="Hjf-f9-7iD" firstAttribute="centerY" secondItem="gGl-bW-mUn" secondAttribute="centerY" id="q4X-ed-MGU"/>
                             <constraint firstItem="qv8-MX-CT8" firstAttribute="centerY" secondItem="Eqi-NY-aPQ" secondAttribute="centerY" id="tG0-Vz-C7m"/>
-                            <constraint firstAttribute="height" constant="75" id="wZl-g4-C5G"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
@@ -243,7 +243,7 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="fE8-Vx-XNs" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="F0L-kC-Buc"/>
-                    <constraint firstAttribute="bottom" secondItem="fE8-Vx-XNs" secondAttribute="bottom" constant="6" id="Sp4-Gs-K2J"/>
+                    <constraint firstAttribute="bottom" secondItem="fE8-Vx-XNs" secondAttribute="bottom" constant="6" id="J6U-8J-srx"/>
                     <constraint firstItem="fE8-Vx-XNs" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="2" id="iXm-f2-0Y3"/>
                     <constraint firstItem="fE8-Vx-XNs" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="2" id="oSy-aO-FqC"/>
                 </constraints>
@@ -256,7 +256,7 @@
                 <outlet property="tagIcon" destination="gGl-bW-mUn" id="V4f-KT-TRd"/>
                 <outlet property="tagLbl" destination="Eqi-NY-aPQ" id="hvV-Id-oli"/>
             </connections>
-            <point key="canvasLocation" x="55.725190839694655" y="2.4647887323943665"/>
+            <point key="canvasLocation" x="55.725190839694655" y="2.8169014084507045"/>
         </tableViewCell>
     </objects>
     <resources>
@@ -276,7 +276,7 @@
             <color red="0.95294117647058818" green="0.95294117647058818" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="underline">
-            <color red="0.0" green="0.0" blue="0.0" alpha="0.1000000015" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.0" blue="0.0" alpha="0.10000000149011612" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

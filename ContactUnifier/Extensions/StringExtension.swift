@@ -2,8 +2,11 @@ import Foundation
 import UIKit
 
 extension String {
+
+    var isEmptyStr:Bool{
+        return self.trimmingCharacters(in: NSCharacterSet.whitespaces).isEmpty
+    }
     
-    //MARK:- VARIOUS METHODS FOR STRING
     var isEmail: Bool {
         let regex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
         return checkRegEx(for: self, regEx: regex)
